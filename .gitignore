@@ -5,3 +5,4 @@ __pycache__/
 work/
 .env
 *.pyc
+.ruff_cache/

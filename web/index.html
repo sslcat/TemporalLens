@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101419" />
+    <title>TemporalLens · Motion workspace</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script defer src="/assets/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/" aria-label="TemporalLens home"
+        ><span class="logo" aria-hidden="true"><i></i><i></i><i></i></span
+        >Temporal<span>Lens</span></a
+      ><span class="head-divider"></span
+      ><span class="nav-active">Workspace</span
+      ><a class="research" href="/assets/results.png" target="_blank"
+        >Experiment results ↗</a
+      ><span id="status" class="status">Connecting</span>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <div class="eyebrow">VIDEO ANALYSIS</div>
+          <h1>Motion workspace</h1>
+          <p>Inspect directional motion in short, single-marker clips.</p>
+        </div>
+        <div class="commands">
+          <button id="demo">Load example</button
+          ><button id="upload" class="primary">
+            <strong aria-hidden="true">↑</strong> Upload video</button
+          ><input
+            id="file"
+            type="file"
+            accept="video/mp4,video/webm,.mp4,.webm"
+            hidden
+          />
+        </div>
+      </section>
+      <div class="grid">
+        <section class="panel monitor">
+          <div class="bar">
+            <h2>Video monitor</h2>
+            <span id="source">EXAMPLE</span>
+          </div>
+          <div class="screen">
+            <video
+              id="video"
+              controls
+              playsinline
+              preload="auto"
+              aria-label="Video preview"
+            ></video>
+          </div>
+          <div class="fileline">
+            <span class="file-icon" aria-hidden="true">▤</span
+            ><b id="filename">Example clip</b><span id="details"></span>
+          </div>
+        </section>
+        <section class="panel events">
+          <div class="bar">
+            <h2>Detected events</h2>
+            <span id="count">—</span>
+          </div>
+          <div id="events" aria-live="polite"></div>
+          <div class="model-note">
+            <span class="dot"></span>
+            <div>
+              <b>Temporal CNN</b
+              ><small>Scores are uncalibrated softmax outputs.</small>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="panel timeline">
+        <div class="bar">
+          <h2>Event timeline</h2>
+          <span id="time">0.0 s</span>
+        </div>
+        <div class="ruler" id="ruler"></div>
+        <div class="track" id="track" aria-label="Event timeline"></div>
+        <div class="timeline-note">Select an event to seek the preview.</div>
+      </section>
+      <footer>
+        <span>Input scope</span> One bright cyan marker on a dark background.
+        Human actions and other subjects are unsupported.
+        <div>MP4 / WebM · 5–15 s · 24 MiB max · up to 1080p</div>
+      </footer>
+    </main>
+  </body>
+</html>

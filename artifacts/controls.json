@@ -1,0 +1,54 @@
+{
+  "velocity_rule": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact": 0.8645833333333334,
+    "iou": 0.9454864652130276
+  },
+  "continuous_replay": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact": 1.0,
+    "iou": 0.9949645771886422
+  },
+  "spliced": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact": 0.2604166666666667,
+    "iou": 0.9972900346901042
+  },
+  "failed_with_prediction_at_seam": 71,
+  "example": {
+    "scene": 30000,
+    "seam_seconds": 4.7,
+    "truth": [
+      [
+        2,
+        6,
+        19
+      ],
+      [
+        1,
+        60,
+        75
+      ]
+    ],
+    "predicted": [
+      [
+        2,
+        6,
+        19
+      ],
+      [
+        2,
+        46,
+        49
+      ],
+      [
+        1,
+        60,
+        75
+      ]
+    ]
+  }
+}
