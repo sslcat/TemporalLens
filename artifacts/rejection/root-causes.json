@@ -1,0 +1,3842 @@
+{
+  "train": {
+    "all": {
+      "n": 360,
+      "participants": 16,
+      "true_counts": [
+        257,
+        24,
+        27,
+        27,
+        25
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.21620350182056425,
+          0.9417701661586761,
+          1.9119897007942201
+        ],
+        [
+          -3.9718996047973634,
+          -1.7672574520111084,
+          1.0174684047698992
+        ],
+        [
+          -1.5175906896591187,
+          -0.5188519656658173,
+          0.5030623972415926
+        ],
+        [
+          -2.9901405572891235,
+          -0.5493339896202087,
+          1.0623183608055116
+        ],
+        [
+          -1.2302382588386536,
+          -0.14603783935308456,
+          0.8002241373062141
+        ]
+      ],
+      "top_target_score": [
+        0.35742337180015343,
+        0.5016893460335168,
+        0.8222156217041513
+      ],
+      "top_two_prob_gap": [
+        0.026945854033805772,
+        0.22506080310520138,
+        0.7033214803263272
+      ],
+      "target_minus_other_logit": [
+        -1.7786777585744857,
+        -0.4688846617937088,
+        1.375676405429843
+      ],
+      "other_wins_5way": 243,
+      "threshold_accepts": 121,
+      "top_target_correct": 78,
+      "original_annotation_frame_counts": {
+        "G11": 1940,
+        "B0B": 4545,
+        "G05": 2016,
+        "G03": 834,
+        "G02": 1237,
+        "B0A": 4203,
+        "G08": 1031,
+        "G06": 1972,
+        "G10": 2180,
+        "D0X": 4304,
+        "G09": 1554,
+        "G07": 2030,
+        "G01": 1152,
+        "G04": 1552
+      }
+    },
+    "matched": {
+      "n": 103,
+      "participants": 16,
+      "true_counts": [
+        0,
+        24,
+        27,
+        27,
+        25
+      ],
+      "logit_p10_p50_p90": [
+        [
+          -0.0690213233232498,
+          0.5089415907859802,
+          1.4073594570159913
+        ],
+        [
+          -4.1568474769592285,
+          -1.9157776832580566,
+          4.131537103652953
+        ],
+        [
+          -1.7018696308135985,
+          -0.42184844613075256,
+          0.6976001739501952
+        ],
+        [
+          -4.682729339599609,
+          -0.16845035552978516,
+          1.7685133457183837
+        ],
+        [
+          -1.638674020767212,
+          0.03929827734827995,
+          1.445235991477966
+        ]
+      ],
+      "top_target_score": [
+        0.3761010047011983,
+        0.6198424139791956,
+        0.9841333474172104
+      ],
+      "top_two_prob_gap": [
+        0.02710163269469548,
+        0.31058715463483844,
+        0.9721649030934597
+      ],
+      "target_minus_other_logit": [
+        -0.7886860370635986,
+        0.568753719329834,
+        4.035126960277557
+      ],
+      "other_wins_5way": 37,
+      "threshold_accepts": 53,
+      "top_target_correct": 78,
+      "original_annotation_frame_counts": {
+        "G11": 1586,
+        "B0B": 1099,
+        "G05": 1546,
+        "B0A": 784,
+        "G06": 1748,
+        "D0X": 682,
+        "G10": 2016
+      }
+    },
+    "verified_other": {
+      "n": 236,
+      "participants": 16,
+      "true_counts": [
+        236,
+        0,
+        0,
+        0,
+        0
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.41549235582351685,
+          1.0852215886116028,
+          2.0557944774627686
+        ],
+        [
+          -3.7085838317871094,
+          -1.7352370619773865,
+          0.016117550432682037
+        ],
+        [
+          -1.425197720527649,
+          -0.5576610267162323,
+          0.4782489389181137
+        ],
+        [
+          -2.351777195930481,
+          -0.603814959526062,
+          0.7990199625492096
+        ],
+        [
+          -1.1471314430236816,
+          -0.19160713255405426,
+          0.569132924079895
+        ]
+      ],
+      "top_target_score": [
+        0.3434028623990285,
+        0.4825717998332004,
+        0.7416476626755375
+      ],
+      "top_two_prob_gap": [
+        0.026956692248290753,
+        0.1904222737512278,
+        0.5642988337666462
+      ],
+      "target_minus_other_logit": [
+        -2.0173103511333466,
+        -0.7727448008954525,
+        0.528401255607605
+      ],
+      "other_wins_5way": 193,
+      "threshold_accepts": 62,
+      "top_target_correct": 0,
+      "original_annotation_frame_counts": {
+        "B0B": 3143,
+        "G03": 834,
+        "G02": 1237,
+        "B0A": 2672,
+        "G08": 1031,
+        "D0X": 2796,
+        "G09": 1554,
+        "G07": 2030,
+        "G01": 1152,
+        "G04": 1552
+      }
+    },
+    "partial_or_duplicate": {
+      "n": 21,
+      "participants": 10,
+      "true_counts": [
+        21,
+        0,
+        0,
+        0,
+        0
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.32378897070884705,
+          0.8654299974441528,
+          1.6521703004837036
+        ],
+        [
+          -3.210897207260132,
+          -1.589475154876709,
+          3.522239923477173
+        ],
+        [
+          -1.5447297096252441,
+          -0.42518648505210876,
+          0.7789566516876221
+        ],
+        [
+          -5.183922290802002,
+          -0.4841107130050659,
+          0.8197833299636841
+        ],
+        [
+          -0.7779098749160767,
+          -0.11993994563817978,
+          0.6713313460350037
+        ]
+      ],
+      "top_target_score": [
+        0.3805716434372756,
+        0.5031520127584036,
+        0.9654635540024793
+      ],
+      "top_two_prob_gap": [
+        0.060219626714581476,
+        0.1939221325866881,
+        0.9460349448742499
+      ],
+      "target_minus_other_logit": [
+        -1.441442525072489,
+        -0.22921111434698105,
+        2.9130672812461853
+      ],
+      "other_wins_5way": 13,
+      "threshold_accepts": 6,
+      "top_target_correct": 0,
+      "original_annotation_frame_counts": {
+        "B0B": 303,
+        "G10": 164,
+        "B0A": 747,
+        "G05": 470,
+        "D0X": 826,
+        "G11": 354,
+        "G06": 224
+      }
+    },
+    "alignment": {
+      "rows": [
+        {
+          "source": "1CM1_4_R_#229",
+          "person": "1CM1_4",
+          "candidate": [
+            20,
+            60
+          ],
+          "truth": 4,
+          "iou": 0.813953488372093,
+          "target_purity": 0.875,
+          "start_error": 3,
+          "end_error": 5,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3501454398263262,
+            "max_score": 0.44038353163928523,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.3546959494143754,
+            "max_score": 0.4583480928048554,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM1_4_R_#229",
+          "person": "1CM1_4",
+          "candidate": [
+            500,
+            552
+          ],
+          "truth": 1,
+          "iou": 0.8076923076923077,
+          "target_purity": 0.8076923076923077,
+          "start_error": -2,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9519674766006706,
+            "max_score": 0.9519674766006706,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9713299809376691,
+            "max_score": 0.9713299809376691,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM1_4_R_#229",
+          "person": "1CM1_4",
+          "candidate": [
+            2340,
+            2416
+          ],
+          "truth": 2,
+          "iou": 0.5394736842105263,
+          "target_purity": 0.5394736842105263,
+          "start_error": -10,
+          "end_error": 25,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.7538228204205615,
+            "max_score": 0.7538228204205615,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.916844930891869,
+            "max_score": 0.916844930891869,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM1_4_R_#231",
+          "person": "1CM1_4",
+          "candidate": [
+            1288,
+            1336
+          ],
+          "truth": 2,
+          "iou": 0.7083333333333334,
+          "target_purity": 0.7083333333333334,
+          "start_error": -3,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.4587301682726531,
+            "max_score": 0.4587301682726531,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.5598384298664288,
+            "max_score": 0.5598384298664288,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM1_4_R_#231",
+          "person": "1CM1_4",
+          "candidate": [
+            3328,
+            3396
+          ],
+          "truth": 4,
+          "iou": 0.704225352112676,
+          "target_purity": 0.7352941176470589,
+          "start_error": 3,
+          "end_error": 18,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.37958790457609104,
+            "max_score": 0.37958790457609104,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.3785867999934771,
+            "max_score": 0.3785867999934771,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_11_R_#205",
+          "person": "1CM42_11",
+          "candidate": [
+            560,
+            644
+          ],
+          "truth": 4,
+          "iou": 0.5119047619047619,
+          "target_purity": 0.5119047619047619,
+          "start_error": -26,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.5009948085505558,
+            "max_score": 0.5009948085505558,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.5130900076365239,
+            "max_score": 0.5130900076365239,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_11_R_#205",
+          "person": "1CM42_11",
+          "candidate": [
+            2532,
+            2620
+          ],
+          "truth": 2,
+          "iou": 0.7613636363636364,
+          "target_purity": 0.7613636363636364,
+          "start_error": -13,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3530242983201537,
+            "max_score": 0.5931552902941138,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.40554827287266754,
+            "max_score": 0.5668179905125988,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_11_R_#205",
+          "person": "1CM42_11",
+          "candidate": [
+            3468,
+            3540
+          ],
+          "truth": 3,
+          "iou": 0.8472222222222222,
+          "target_purity": 0.8472222222222222,
+          "start_error": -3,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.898429604736672,
+            "max_score": 0.898429604736672,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.918231526053158,
+            "max_score": 0.918231526053158,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_11_R_#205",
+          "person": "1CM42_11",
+          "candidate": [
+            3632,
+            3686
+          ],
+          "truth": 1,
+          "iou": 0.5370370370370371,
+          "target_purity": 0.5370370370370371,
+          "start_error": -25,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9225014022465677,
+            "max_score": 0.9225014022465677,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.998619417891354,
+            "max_score": 0.998619417891354,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_11_R_#207",
+          "person": "1CM42_11",
+          "candidate": [
+            36,
+            96
+          ],
+          "truth": 1,
+          "iou": 0.8333333333333334,
+          "target_purity": 1.0,
+          "start_error": 0,
+          "end_error": -12,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9581212839068419,
+            "max_score": 0.9581212839068419,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9255131185084059,
+            "max_score": 0.9255131185084059,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_11_R_#207",
+          "person": "1CM42_11",
+          "candidate": [
+            588,
+            660
+          ],
+          "truth": 3,
+          "iou": 0.7083333333333334,
+          "target_purity": 0.7083333333333334,
+          "start_error": -17,
+          "end_error": 4,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.7890969841534073,
+            "max_score": 0.7890969841534073,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.8158078100771629,
+            "max_score": 0.8158078100771629,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_11_R_#207",
+          "person": "1CM42_11",
+          "candidate": [
+            2084,
+            2144
+          ],
+          "truth": 2,
+          "iou": 0.7166666666666667,
+          "target_purity": 0.7166666666666667,
+          "start_error": -7,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.2745254034045509,
+            "max_score": 0.700191739737165,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.2949453368616165,
+            "max_score": 0.6870571028382181,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_11_R_#207",
+          "person": "1CM42_11",
+          "candidate": [
+            3660,
+            3682
+          ],
+          "truth": 4,
+          "iou": 0.5238095238095238,
+          "target_purity": 1.0,
+          "start_error": 20,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.4378695598705088,
+            "max_score": 0.4378695598705088,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.5080370762796738,
+            "max_score": 0.5080370762796738,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_18_R_#177",
+          "person": "1CM42_18",
+          "candidate": [
+            908,
+            1004
+          ],
+          "truth": 4,
+          "iou": 0.5833333333333334,
+          "target_purity": 0.5833333333333334,
+          "start_error": -33,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.36431761351043207,
+            "max_score": 0.36431761351043207,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.37674761956762404,
+            "max_score": 0.37674761956762404,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_18_R_#177",
+          "person": "1CM42_18",
+          "candidate": [
+            2232,
+            2320
+          ],
+          "truth": 3,
+          "iou": 0.6818181818181818,
+          "target_purity": 0.6818181818181818,
+          "start_error": -17,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.21393332134510648,
+            "max_score": 0.6613930606922432,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.28971295189728696,
+            "max_score": 0.5848285423272106,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_18_R_#177",
+          "person": "1CM42_18",
+          "candidate": [
+            3256,
+            3380
+          ],
+          "truth": 2,
+          "iou": 0.6209677419354839,
+          "target_purity": 0.6209677419354839,
+          "start_error": -37,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.8047979850439775,
+            "max_score": 0.8047979850439775,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.7854602764369851,
+            "max_score": 0.7854602764369851,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_18_R_#177",
+          "person": "1CM42_18",
+          "candidate": [
+            3596,
+            3675
+          ],
+          "truth": 1,
+          "iou": 0.7468354430379747,
+          "target_purity": 0.7468354430379747,
+          "start_error": -20,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9860440789057032,
+            "max_score": 0.9860440789057032,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9920159931747515,
+            "max_score": 0.9920159931747515,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_18_R_#180",
+          "person": "1CM42_18",
+          "candidate": [
+            588,
+            648
+          ],
+          "truth": 1,
+          "iou": 0.8,
+          "target_purity": 0.8,
+          "start_error": -10,
+          "end_error": 2,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9508481032263221,
+            "max_score": 0.9508481032263221,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9529700230246234,
+            "max_score": 0.9529700230246234,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_18_R_#180",
+          "person": "1CM42_18",
+          "candidate": [
+            2200,
+            2280
+          ],
+          "truth": 4,
+          "iou": 0.6375,
+          "target_purity": 0.6375,
+          "start_error": -21,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.22483993781303216,
+            "max_score": 0.6414382316369989,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.2794158880948114,
+            "max_score": 0.48467245949071586,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_18_R_#180",
+          "person": "1CM42_18",
+          "candidate": [
+            3148,
+            3232
+          ],
+          "truth": 2,
+          "iou": 0.6222222222222222,
+          "target_purity": 0.6666666666666666,
+          "start_error": -28,
+          "end_error": -6,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.7912974898472455,
+            "max_score": 0.7912974898472455,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.8080537672996951,
+            "max_score": 0.8080537672996951,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_26_R_#173",
+          "person": "1CM42_26",
+          "candidate": [
+            40,
+            88
+          ],
+          "truth": 1,
+          "iou": 0.7384615384615385,
+          "target_purity": 1.0,
+          "start_error": 10,
+          "end_error": -7,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.999404355957445,
+            "max_score": 0.999404355957445,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9985523924076879,
+            "max_score": 0.9985523924076879,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_26_R_#173",
+          "person": "1CM42_26",
+          "candidate": [
+            1728,
+            1808
+          ],
+          "truth": 2,
+          "iou": 0.7125,
+          "target_purity": 0.7125,
+          "start_error": -3,
+          "end_error": 20,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.36016214223654763,
+            "max_score": 0.3779293913681005,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.4124642625623513,
+            "max_score": 0.4124642625623513,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_26_R_#173",
+          "person": "1CM42_26",
+          "candidate": [
+            2328,
+            2456
+          ],
+          "truth": 3,
+          "iou": 0.828125,
+          "target_purity": 0.828125,
+          "start_error": -9,
+          "end_error": 13,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.6198424139791956,
+            "max_score": 0.6198424139791956,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.6878132645550042,
+            "max_score": 0.6878132645550042,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_26_R_#173",
+          "person": "1CM42_26",
+          "candidate": [
+            3728,
+            3788
+          ],
+          "truth": 4,
+          "iou": 0.5802469135802469,
+          "target_purity": 0.7833333333333333,
+          "start_error": -13,
+          "end_error": -21,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.6587631876561548,
+            "max_score": 0.6587631876561548,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.8262305056517973,
+            "max_score": 0.8262305056517973,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_26_R_#175",
+          "person": "1CM42_26",
+          "candidate": [
+            44,
+            96
+          ],
+          "truth": 2,
+          "iou": 0.8653846153846154,
+          "target_purity": 0.8653846153846154,
+          "start_error": -1,
+          "end_error": 6,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.2563430174739347,
+            "max_score": 0.4464427171169171,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.2529145782990298,
+            "max_score": 0.4351603682073246,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_26_R_#175",
+          "person": "1CM42_26",
+          "candidate": [
+            1644,
+            1760
+          ],
+          "truth": 4,
+          "iou": 0.6982758620689655,
+          "target_purity": 0.6982758620689655,
+          "start_error": -22,
+          "end_error": 13,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.6502135681575574,
+            "max_score": 0.6502135681575574,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.6795939403141932,
+            "max_score": 0.6795939403141932,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_26_R_#175",
+          "person": "1CM42_26",
+          "candidate": [
+            2584,
+            2700
+          ],
+          "truth": 3,
+          "iou": 0.75,
+          "target_purity": 0.75,
+          "start_error": -13,
+          "end_error": 16,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.40363155291671815,
+            "max_score": 0.5511578528608119,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.4792096584417218,
+            "max_score": 0.49512293102142024,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_26_R_#175",
+          "person": "1CM42_26",
+          "candidate": [
+            3372,
+            3472
+          ],
+          "truth": 1,
+          "iou": 0.66,
+          "target_purity": 0.66,
+          "start_error": -4,
+          "end_error": 30,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9602057005183038,
+            "max_score": 0.9602057005183038,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9957954653381933,
+            "max_score": 0.9957954653381933,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_4_R_#185",
+          "person": "1CM42_4",
+          "candidate": [
+            588,
+            656
+          ],
+          "truth": 2,
+          "iou": 0.7794117647058824,
+          "target_purity": 0.7794117647058824,
+          "start_error": -5,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.49017528930057996,
+            "max_score": 0.49017528930057996,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.5592552918567081,
+            "max_score": 0.5592552918567081,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_4_R_#185",
+          "person": "1CM42_4",
+          "candidate": [
+            2200,
+            2252
+          ],
+          "truth": 1,
+          "iou": 0.7704918032786885,
+          "target_purity": 0.9038461538461539,
+          "start_error": 9,
+          "end_error": 5,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9999974611669455,
+            "max_score": 0.9999974611669455,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9999941560498412,
+            "max_score": 0.9999941560498412,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_4_R_#185",
+          "person": "1CM42_4",
+          "candidate": [
+            2988,
+            3040
+          ],
+          "truth": 3,
+          "iou": 0.5576923076923077,
+          "target_purity": 0.5576923076923077,
+          "start_error": -3,
+          "end_error": 20,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.3836923294213545,
+            "max_score": 0.40605244105601945,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.4508620211067413,
+            "max_score": 0.4508620211067413,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_4_R_#186",
+          "person": "1CM42_4",
+          "candidate": [
+            32,
+            64
+          ],
+          "truth": 1,
+          "iou": 0.9117647058823529,
+          "target_purity": 0.96875,
+          "start_error": 2,
+          "end_error": 1,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9992684857242634,
+            "max_score": 0.9992684857242634,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9992684857242634,
+            "max_score": 0.9992684857242634,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_4_R_#186",
+          "person": "1CM42_4",
+          "candidate": [
+            1520,
+            1592
+          ],
+          "truth": 3,
+          "iou": 0.5333333333333333,
+          "target_purity": 0.5555555555555556,
+          "start_error": 3,
+          "end_error": 32,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.4293609673037193,
+            "max_score": 0.4293609673037193,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.5940741444688413,
+            "max_score": 0.5940741444688413,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_4_R_#186",
+          "person": "1CM42_4",
+          "candidate": [
+            2232,
+            2320
+          ],
+          "truth": 4,
+          "iou": 0.7159090909090909,
+          "target_purity": 0.7159090909090909,
+          "start_error": -3,
+          "end_error": 22,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.43499615677421427,
+            "max_score": 0.43499615677421427,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.4278220113386521,
+            "max_score": 0.4278220113386521,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_6_R_#161",
+          "person": "1CM42_6",
+          "candidate": [
+            28,
+            84
+          ],
+          "truth": 4,
+          "iou": 0.6833333333333333,
+          "target_purity": 0.7321428571428571,
+          "start_error": 4,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.8071100481560415,
+            "max_score": 0.8071100481560415,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.8294158226451619,
+            "max_score": 0.8294158226451619,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#161",
+          "person": "1CM42_6",
+          "candidate": [
+            412,
+            476
+          ],
+          "truth": 2,
+          "iou": 0.90625,
+          "target_purity": 0.90625,
+          "start_error": -5,
+          "end_error": 1,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.9723922198187082,
+            "max_score": 0.9723922198187082,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.9740065008410822,
+            "max_score": 0.9740065008410822,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#161",
+          "person": "1CM42_6",
+          "candidate": [
+            1732,
+            1780
+          ],
+          "truth": 3,
+          "iou": 0.8125,
+          "target_purity": 0.8125,
+          "start_error": -8,
+          "end_error": 1,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.3372412260911291,
+            "max_score": 0.6605262254508408,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.355030212793126,
+            "max_score": 0.6439225340880199,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#161",
+          "person": "1CM42_6",
+          "candidate": [
+            3468,
+            3544
+          ],
+          "truth": 1,
+          "iou": 0.75,
+          "target_purity": 0.75,
+          "start_error": -8,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9999962995017373,
+            "max_score": 0.9999962995017373,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9999990420655215,
+            "max_score": 0.9999990420655215,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#164",
+          "person": "1CM42_6",
+          "candidate": [
+            192,
+            248
+          ],
+          "truth": 1,
+          "iou": 0.75,
+          "target_purity": 0.75,
+          "start_error": -7,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9998141792504305,
+            "max_score": 0.9998141792504305,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9999434661546274,
+            "max_score": 0.9999434661546274,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#164",
+          "person": "1CM42_6",
+          "candidate": [
+            404,
+            464
+          ],
+          "truth": 3,
+          "iou": 0.967741935483871,
+          "target_purity": 1.0,
+          "start_error": 1,
+          "end_error": -1,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.4857875507814269,
+            "max_score": 0.5133716774044776,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.463318600671259,
+            "max_score": 0.5355944495056407,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_6_R_#164",
+          "person": "1CM42_6",
+          "candidate": [
+            2748,
+            2792
+          ],
+          "truth": 4,
+          "iou": 0.8888888888888888,
+          "target_purity": 0.9090909090909091,
+          "start_error": -4,
+          "end_error": -1,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.8489334206200514,
+            "max_score": 0.8489334206200514,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.8428730888590861,
+            "max_score": 0.8428730888590861,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_6_R_#164",
+          "person": "1CM42_6",
+          "candidate": [
+            3948,
+            4028
+          ],
+          "truth": 2,
+          "iou": 0.9629629629629629,
+          "target_purity": 0.975,
+          "start_error": -2,
+          "end_error": -1,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.9764904214632392,
+            "max_score": 0.9764904214632392,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.9783179879314264,
+            "max_score": 0.9783179879314264,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_9_R_#165",
+          "person": "1CM42_9",
+          "candidate": [
+            1576,
+            1624
+          ],
+          "truth": 3,
+          "iou": 0.7708333333333334,
+          "target_purity": 0.7708333333333334,
+          "start_error": 0,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.5600839146721932,
+            "max_score": 0.5600839146721932,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.6352413322309599,
+            "max_score": 0.6352413322309599,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_9_R_#165",
+          "person": "1CM42_9",
+          "candidate": [
+            3372,
+            3412
+          ],
+          "truth": 1,
+          "iou": 0.6896551724137931,
+          "target_purity": 1.0,
+          "start_error": 3,
+          "end_error": -15,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9057719980266031,
+            "max_score": 0.9057719980266031,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.8523556454158422,
+            "max_score": 0.8523556454158422,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_9_R_#165",
+          "person": "1CM42_9",
+          "candidate": [
+            3924,
+            3960
+          ],
+          "truth": 2,
+          "iou": 0.9444444444444444,
+          "target_purity": 0.9444444444444444,
+          "start_error": -1,
+          "end_error": 1,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.5516395198240388,
+            "max_score": 0.5516395198240388,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.6055920568465742,
+            "max_score": 0.6055920568465742,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_1_R_#65",
+          "person": "1CV12_1",
+          "candidate": [
+            924,
+            1056
+          ],
+          "truth": 1,
+          "iou": 0.7348484848484849,
+          "target_purity": 0.7348484848484849,
+          "start_error": -25,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.945416713791303,
+            "max_score": 0.945416713791303,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9607180379711485,
+            "max_score": 0.9607180379711485,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_1_R_#65",
+          "person": "1CV12_1",
+          "candidate": [
+            3480,
+            3588
+          ],
+          "truth": 3,
+          "iou": 0.7592592592592593,
+          "target_purity": 0.7592592592592593,
+          "start_error": -2,
+          "end_error": 24,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.6744250961075002,
+            "max_score": 0.6744250961075002,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.7716579056411884,
+            "max_score": 0.7716579056411884,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_1_R_#65",
+          "person": "1CV12_1",
+          "candidate": [
+            4096,
+            4152
+          ],
+          "truth": 2,
+          "iou": 0.9032258064516129,
+          "target_purity": 1.0,
+          "start_error": 0,
+          "end_error": -6,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.6644902742020717,
+            "max_score": 0.6644902742020717,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.7178858404843929,
+            "max_score": 0.7178858404843929,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_1_R_#67",
+          "person": "1CV12_1",
+          "candidate": [
+            604,
+            716
+          ],
+          "truth": 3,
+          "iou": 0.8035714285714286,
+          "target_purity": 0.8035714285714286,
+          "start_error": -15,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.4775882468318457,
+            "max_score": 0.4775882468318457,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.5328143635296584,
+            "max_score": 0.5328143635296584,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_1_R_#67",
+          "person": "1CV12_1",
+          "candidate": [
+            1592,
+            1688
+          ],
+          "truth": 2,
+          "iou": 0.96875,
+          "target_purity": 0.96875,
+          "start_error": -1,
+          "end_error": 2,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.3461182014012288,
+            "max_score": 0.3825082087228197,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.3490588806716712,
+            "max_score": 0.36713565689233957,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_1_R_#67",
+          "person": "1CV12_1",
+          "candidate": [
+            2168,
+            2272
+          ],
+          "truth": 4,
+          "iou": 0.9134615384615384,
+          "target_purity": 0.9134615384615384,
+          "start_error": -2,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.5295267843037654,
+            "max_score": 0.5295267843037654,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.5225757623817477,
+            "max_score": 0.5225757623817477,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_1_R_#67",
+          "person": "1CV12_1",
+          "candidate": [
+            3592,
+            3700
+          ],
+          "truth": 1,
+          "iou": 0.8148148148148148,
+          "target_purity": 0.8148148148148148,
+          "start_error": -7,
+          "end_error": 13,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9933136178141252,
+            "max_score": 0.9933136178141252,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9976484909954358,
+            "max_score": 0.9976484909954358,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_16_R_#105",
+          "person": "1CV12_16",
+          "candidate": [
+            1500,
+            1732
+          ],
+          "truth": 3,
+          "iou": 0.5387931034482759,
+          "target_purity": 0.5387931034482759,
+          "start_error": -15,
+          "end_error": 92,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.4071277760430712,
+            "max_score": 0.4076962318615614,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.6776963644680979,
+            "max_score": 0.6776963644680979,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_16_R_#105",
+          "person": "1CV12_16",
+          "candidate": [
+            2692,
+            2840
+          ],
+          "truth": 4,
+          "iou": 0.527027027027027,
+          "target_purity": 0.527027027027027,
+          "start_error": -6,
+          "end_error": 64,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.47966618663083643,
+            "max_score": 0.47966618663083643,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.5263247549918614,
+            "max_score": 0.5263247549918614,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_16_R_#105",
+          "person": "1CV12_16",
+          "candidate": [
+            3516,
+            3612
+          ],
+          "truth": 2,
+          "iou": 0.7551020408163265,
+          "target_purity": 0.7708333333333334,
+          "start_error": 2,
+          "end_error": 22,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.2436178487784912,
+            "max_score": 0.42029128498383245,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.2525146048935579,
+            "max_score": 0.42249062862472486,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_16_R_#108",
+          "person": "1CV12_16",
+          "candidate": [
+            3028,
+            3164
+          ],
+          "truth": 3,
+          "iou": 0.6323529411764706,
+          "target_purity": 0.6323529411764706,
+          "start_error": -8,
+          "end_error": 42,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.7760377084714173,
+            "max_score": 0.7760377084714173,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.8970588619965596,
+            "max_score": 0.8970588619965596,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_16_R_#108",
+          "person": "1CV12_16",
+          "candidate": [
+            4400,
+            4516
+          ],
+          "truth": 4,
+          "iou": 0.5086206896551724,
+          "target_purity": 0.5086206896551724,
+          "start_error": -40,
+          "end_error": 17,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.7122520414236457,
+            "max_score": 0.7122520414236457,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.7503213808703187,
+            "max_score": 0.7503213808703187,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_2_R_#69",
+          "person": "1CV12_2",
+          "candidate": [
+            368,
+            428
+          ],
+          "truth": 1,
+          "iou": 0.9333333333333333,
+          "target_purity": 0.9333333333333333,
+          "start_error": -2,
+          "end_error": 2,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9996135318580305,
+            "max_score": 0.9996135318580305,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9998130163918982,
+            "max_score": 0.9998130163918982,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_2_R_#69",
+          "person": "1CV12_2",
+          "candidate": [
+            2028,
+            2132
+          ],
+          "truth": 3,
+          "iou": 0.7383177570093458,
+          "target_purity": 0.7596153846153846,
+          "start_error": 3,
+          "end_error": 25,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.793753572232616,
+            "max_score": 0.793753572232616,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.8307881350774265,
+            "max_score": 0.8307881350774265,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_2_R_#69",
+          "person": "1CV12_2",
+          "candidate": [
+            3016,
+            3116
+          ],
+          "truth": 2,
+          "iou": 0.53,
+          "target_purity": 0.53,
+          "start_error": -4,
+          "end_error": 43,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.39054398430039994,
+            "max_score": 0.39054398430039994,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.4356911069451318,
+            "max_score": 0.4356911069451318,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_2_R_#72",
+          "person": "1CV12_2",
+          "candidate": [
+            1564,
+            1632
+          ],
+          "truth": 2,
+          "iou": 0.8970588235294118,
+          "target_purity": 0.8970588235294118,
+          "start_error": -4,
+          "end_error": 3,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.4861229649228928,
+            "max_score": 0.4861229649228928,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.49417584182735247,
+            "max_score": 0.49417584182735247,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_2_R_#72",
+          "person": "1CV12_2",
+          "candidate": [
+            3064,
+            3144
+          ],
+          "truth": 3,
+          "iou": 0.5875,
+          "target_purity": 0.5875,
+          "start_error": -1,
+          "end_error": 32,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.641766119864087,
+            "max_score": 0.641766119864087,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.7977832800973337,
+            "max_score": 0.7977832800973337,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#1",
+          "person": "4CM11_11",
+          "candidate": [
+            436,
+            472
+          ],
+          "truth": 2,
+          "iou": 0.8181818181818182,
+          "target_purity": 1.0,
+          "start_error": 3,
+          "end_error": -5,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.8432487495345062,
+            "max_score": 0.8432487495345062,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.8734351375068948,
+            "max_score": 0.8734351375068948,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#1",
+          "person": "4CM11_11",
+          "candidate": [
+            780,
+            816
+          ],
+          "truth": 4,
+          "iou": 0.9473684210526315,
+          "target_purity": 1.0,
+          "start_error": 2,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.6306464037308661,
+            "max_score": 0.6306464037308661,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.6306464037308661,
+            "max_score": 0.6306464037308661,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#1",
+          "person": "4CM11_11",
+          "candidate": [
+            1116,
+            1156
+          ],
+          "truth": 3,
+          "iou": 0.9069767441860465,
+          "target_purity": 0.975,
+          "start_error": 3,
+          "end_error": 1,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.44967371308244414,
+            "max_score": 0.4953353194208173,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.44967371308244414,
+            "max_score": 0.4953353194208173,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_11_R_#1",
+          "person": "4CM11_11",
+          "candidate": [
+            1804,
+            1848
+          ],
+          "truth": 1,
+          "iou": 0.7719298245614035,
+          "target_purity": 1.0,
+          "start_error": 2,
+          "end_error": -11,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.8156298584792103,
+            "max_score": 0.8156298584792103,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9271757355401388,
+            "max_score": 0.9271757355401388,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#4",
+          "person": "4CM11_11",
+          "candidate": [
+            1452,
+            1508
+          ],
+          "truth": 2,
+          "iou": 0.7678571428571429,
+          "target_purity": 0.7678571428571429,
+          "start_error": -2,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.8562008743401682,
+            "max_score": 0.8562008743401682,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.8922285408042758,
+            "max_score": 0.8922285408042758,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#4",
+          "person": "4CM11_11",
+          "candidate": [
+            2600,
+            2648
+          ],
+          "truth": 1,
+          "iou": 0.803921568627451,
+          "target_purity": 0.8541666666666666,
+          "start_error": 3,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9936592996234938,
+            "max_score": 0.9936592996234938,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9953472168455425,
+            "max_score": 0.9953472168455425,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_11_R_#4",
+          "person": "4CM11_11",
+          "candidate": [
+            3460,
+            3512
+          ],
+          "truth": 3,
+          "iou": 0.9423076923076923,
+          "target_purity": 0.9423076923076923,
+          "start_error": -3,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.4253744165753602,
+            "max_score": 0.4253744165753602,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.47341521814176607,
+            "max_score": 0.47341521814176607,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_11_R_#4",
+          "person": "4CM11_11",
+          "candidate": [
+            4240,
+            4296
+          ],
+          "truth": 4,
+          "iou": 0.9491525423728814,
+          "target_purity": 1.0,
+          "start_error": 3,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.6246316084786848,
+            "max_score": 0.6246316084786848,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.6246316084786848,
+            "max_score": 0.6246316084786848,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_15_R_#25",
+          "person": "4CM11_15",
+          "candidate": [
+            624,
+            704
+          ],
+          "truth": 3,
+          "iou": 0.8666666666666667,
+          "target_purity": 0.975,
+          "start_error": 10,
+          "end_error": 2,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.4007430699866438,
+            "max_score": 0.4007430699866438,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.3914231233151106,
+            "max_score": 0.3914231233151106,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#25",
+          "person": "4CM11_15",
+          "candidate": [
+            1704,
+            1808
+          ],
+          "truth": 2,
+          "iou": 0.9158878504672897,
+          "target_purity": 0.9423076923076923,
+          "start_error": -6,
+          "end_error": -3,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.22798053847514918,
+            "max_score": 0.33111147835113974,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.243771483541465,
+            "max_score": 0.31275852553258626,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#25",
+          "person": "4CM11_15",
+          "candidate": [
+            2208,
+            2356
+          ],
+          "truth": 1,
+          "iou": 0.6148648648648649,
+          "target_purity": 0.6148648648648649,
+          "start_error": -51,
+          "end_error": 6,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.42923149971241503,
+            "max_score": 0.42923149971241503,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.4732748856829457,
+            "max_score": 0.4732748856829457,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#25",
+          "person": "4CM11_15",
+          "candidate": [
+            3300,
+            3412
+          ],
+          "truth": 4,
+          "iou": 0.7410714285714286,
+          "target_purity": 0.7410714285714286,
+          "start_error": -22,
+          "end_error": 7,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.3655305353202126,
+            "max_score": 0.3655305353202126,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.3899875474909916,
+            "max_score": 0.3899875474909916,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#28",
+          "person": "4CM11_15",
+          "candidate": [
+            68,
+            160
+          ],
+          "truth": 4,
+          "iou": 0.6847826086956522,
+          "target_purity": 0.6847826086956522,
+          "start_error": -11,
+          "end_error": 18,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.29214515848429573,
+            "max_score": 0.33654219628608556,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.3024252659462651,
+            "max_score": 0.35248586766047874,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#28",
+          "person": "4CM11_15",
+          "candidate": [
+            2952,
+            3140
+          ],
+          "truth": 1,
+          "iou": 0.7564766839378239,
+          "target_purity": 0.776595744680851,
+          "start_error": -42,
+          "end_error": -5,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.43046334733290736,
+            "max_score": 0.43046334733290736,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.4656896387165957,
+            "max_score": 0.4656896387165957,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#28",
+          "person": "4CM11_15",
+          "candidate": [
+            3308,
+            3400
+          ],
+          "truth": 3,
+          "iou": 0.7391304347826086,
+          "target_purity": 0.7391304347826086,
+          "start_error": -7,
+          "end_error": 17,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3865640390867378,
+            "max_score": 0.3865640390867378,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.4327618984329869,
+            "max_score": 0.4327618984329869,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_15_R_#28",
+          "person": "4CM11_15",
+          "candidate": [
+            3604,
+            3668
+          ],
+          "truth": 2,
+          "iou": 0.8235294117647058,
+          "target_purity": 0.875,
+          "start_error": 4,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.29330696010974533,
+            "max_score": 0.29330696010974533,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.2813673136081138,
+            "max_score": 0.28683657434724097,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_17_R_#13",
+          "person": "4CM11_17",
+          "candidate": [
+            856,
+            948
+          ],
+          "truth": 2,
+          "iou": 0.6739130434782609,
+          "target_purity": 0.6739130434782609,
+          "start_error": -7,
+          "end_error": 23,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.37596064263840884,
+            "max_score": 0.37596064263840884,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.4079388547837001,
+            "max_score": 0.4079388547837001,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_17_R_#13",
+          "person": "4CM11_17",
+          "candidate": [
+            1628,
+            1740
+          ],
+          "truth": 4,
+          "iou": 0.8849557522123894,
+          "target_purity": 0.8928571428571429,
+          "start_error": -12,
+          "end_error": -1,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.38971574199507664,
+            "max_score": 0.4329890462500403,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.4036105002669958,
+            "max_score": 0.40759378928621526,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_17_R_#16",
+          "person": "4CM11_17",
+          "candidate": [
+            0,
+            124
+          ],
+          "truth": 3,
+          "iou": 0.8548387096774194,
+          "target_purity": 0.8548387096774194,
+          "start_error": 0,
+          "end_error": 18,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.7364229285313739,
+            "max_score": 0.7364229285313739,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.7532337667343101,
+            "max_score": 0.7532337667343101,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_17_R_#16",
+          "person": "4CM11_17",
+          "candidate": [
+            3240,
+            3496
+          ],
+          "truth": 4,
+          "iou": 0.546875,
+          "target_purity": 0.546875,
+          "start_error": -108,
+          "end_error": 8,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.48125291792218367,
+            "max_score": 0.48125291792218367,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.43366956342031376,
+            "max_score": 0.43366956342031376,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_26_R_#5",
+          "person": "4CM11_26",
+          "candidate": [
+            1092,
+            1272
+          ],
+          "truth": 3,
+          "iou": 0.6555555555555556,
+          "target_purity": 0.6555555555555556,
+          "start_error": -51,
+          "end_error": 11,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3766624529523562,
+            "max_score": 0.3766624529523562,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.37666413860764353,
+            "max_score": 0.37666413860764353,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_26_R_#5",
+          "person": "4CM11_26",
+          "candidate": [
+            3000,
+            3120
+          ],
+          "truth": 4,
+          "iou": 0.5916666666666667,
+          "target_purity": 0.5916666666666667,
+          "start_error": -5,
+          "end_error": 44,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3034317978124317,
+            "max_score": 0.33219231692054374,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.32466582350943124,
+            "max_score": 0.32466582350943124,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_26_R_#8",
+          "person": "4CM11_26",
+          "candidate": [
+            0,
+            172
+          ],
+          "truth": 4,
+          "iou": 0.5348837209302325,
+          "target_purity": 0.5348837209302325,
+          "start_error": -44,
+          "end_error": 36,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.2824914509397763,
+            "max_score": 0.30947246015238294,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.29282692257437914,
+            "max_score": 0.3063249910249873,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_26_R_#8",
+          "person": "4CM11_26",
+          "candidate": [
+            588,
+            768
+          ],
+          "truth": 3,
+          "iou": 0.8055555555555556,
+          "target_purity": 0.8055555555555556,
+          "start_error": -32,
+          "end_error": 3,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.3309089570587477,
+            "max_score": 0.3309089570587477,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.33325462476987716,
+            "max_score": 0.33325462476987716,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_26_R_#8",
+          "person": "4CM11_26",
+          "candidate": [
+            1052,
+            1252
+          ],
+          "truth": 1,
+          "iou": 0.65,
+          "target_purity": 0.65,
+          "start_error": -60,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.6610095716565175,
+            "max_score": 0.6610095716565175,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.8035977000810197,
+            "max_score": 0.8035977000810197,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_26_R_#8",
+          "person": "4CM11_26",
+          "candidate": [
+            2572,
+            2808
+          ],
+          "truth": 2,
+          "iou": 0.5296610169491526,
+          "target_purity": 0.5296610169491526,
+          "start_error": -3,
+          "end_error": 108,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.23429524424804274,
+            "max_score": 0.31377032611776556,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.26177180269488914,
+            "max_score": 0.3103105073997431,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#33",
+          "person": "4CM11_7",
+          "candidate": [
+            0,
+            104
+          ],
+          "truth": 4,
+          "iou": 0.6057692307692307,
+          "target_purity": 0.6057692307692307,
+          "start_error": -36,
+          "end_error": 5,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.4465050388824752,
+            "max_score": 0.4465050388824752,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.41826666498195103,
+            "max_score": 0.41826666498195103,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#33",
+          "person": "4CM11_7",
+          "candidate": [
+            560,
+            704
+          ],
+          "truth": 1,
+          "iou": 0.6266666666666667,
+          "target_purity": 0.6527777777777778,
+          "start_error": 6,
+          "end_error": 50,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.17418790822577493,
+            "max_score": 0.40853959070500345,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.23319077757645648,
+            "max_score": 0.4139861417681998,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#33",
+          "person": "4CM11_7",
+          "candidate": [
+            872,
+            972
+          ],
+          "truth": 3,
+          "iou": 0.7383177570093458,
+          "target_purity": 0.79,
+          "start_error": 7,
+          "end_error": 21,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.2582766000481403,
+            "max_score": 0.36925709890050756,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.2644695401628117,
+            "max_score": 0.38220405421618725,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#33",
+          "person": "4CM11_7",
+          "candidate": [
+            2180,
+            2356
+          ],
+          "truth": 2,
+          "iou": 0.5511363636363636,
+          "target_purity": 0.5511363636363636,
+          "start_error": -58,
+          "end_error": 21,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.38312144641237456,
+            "max_score": 0.38312144641237456,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.526695326295593,
+            "max_score": 0.526695326295593,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#36",
+          "person": "4CM11_7",
+          "candidate": [
+            376,
+            484
+          ],
+          "truth": 3,
+          "iou": 0.8796296296296297,
+          "target_purity": 0.8796296296296297,
+          "start_error": -9,
+          "end_error": 4,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.24100701273919,
+            "max_score": 0.46947900511224333,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.24303204700645106,
+            "max_score": 0.4640120842268607,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#36",
+          "person": "4CM11_7",
+          "candidate": [
+            684,
+            816
+          ],
+          "truth": 2,
+          "iou": 0.8636363636363636,
+          "target_purity": 0.8636363636363636,
+          "start_error": -13,
+          "end_error": 5,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.4122925760429602,
+            "max_score": 0.4122925760429602,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.4491295538190127,
+            "max_score": 0.4491295538190127,
+            "accepted": false
+          }
+        },
+        {
+          "source": "4CM11_7_R_#36",
+          "person": "4CM11_7",
+          "candidate": [
+            3888,
+            3994
+          ],
+          "truth": 1,
+          "iou": 0.6415094339622641,
+          "target_purity": 0.6415094339622641,
+          "start_error": -3,
+          "end_error": 35,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.20639729224881054,
+            "max_score": 0.5008594414260535,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.43589838168478784,
+            "max_score": 0.43589838168478784,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CM42_32_R_#170",
+          "person": "1CM42_32",
+          "candidate": [
+            800,
+            872
+          ],
+          "truth": 4,
+          "iou": 0.7808219178082192,
+          "target_purity": 0.7916666666666666,
+          "start_error": 1,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.6156202058012592,
+            "max_score": 0.6156202058012592,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.608680308005649,
+            "max_score": 0.608680308005649,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#170",
+          "person": "1CM42_32",
+          "candidate": [
+            1776,
+            1856
+          ],
+          "truth": 1,
+          "iou": 0.8,
+          "target_purity": 0.8,
+          "start_error": -1,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9895814198109645,
+            "max_score": 0.9895814198109645,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9979631371200371,
+            "max_score": 0.9979631371200371,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#170",
+          "person": "1CM42_32",
+          "candidate": [
+            2088,
+            2208
+          ],
+          "truth": 3,
+          "iou": 0.6583333333333333,
+          "target_purity": 0.6583333333333333,
+          "start_error": -21,
+          "end_error": 20,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.6342202048313371,
+            "max_score": 0.6342202048313371,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.831489895952708,
+            "max_score": 0.831489895952708,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#170",
+          "person": "1CM42_32",
+          "candidate": [
+            3400,
+            3516
+          ],
+          "truth": 2,
+          "iou": 0.7931034482758621,
+          "target_purity": 0.7931034482758621,
+          "start_error": -7,
+          "end_error": 17,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.7116084406891442,
+            "max_score": 0.7116084406891442,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.7210357193829825,
+            "max_score": 0.7210357193829825,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#171",
+          "person": "1CM42_32",
+          "candidate": [
+            0,
+            96
+          ],
+          "truth": 4,
+          "iou": 0.6666666666666666,
+          "target_purity": 0.6666666666666666,
+          "start_error": -27,
+          "end_error": 5,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.7012475903590869,
+            "max_score": 0.7012475903590869,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.8061627828423779,
+            "max_score": 0.8061627828423779,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#171",
+          "person": "1CM42_32",
+          "candidate": [
+            1184,
+            1244
+          ],
+          "truth": 2,
+          "iou": 0.75,
+          "target_purity": 0.75,
+          "start_error": -5,
+          "end_error": 10,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.6727063042976421,
+            "max_score": 0.6727063042976421,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.7121772862587372,
+            "max_score": 0.7121772862587372,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#171",
+          "person": "1CM42_32",
+          "candidate": [
+            2956,
+            3036
+          ],
+          "truth": 1,
+          "iou": 0.725,
+          "target_purity": 0.725,
+          "start_error": -7,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9948037066713301,
+            "max_score": 0.9948037066713301,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.9992448595518183,
+            "max_score": 0.9992448595518183,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CM42_32_R_#171",
+          "person": "1CM42_32",
+          "candidate": [
+            3488,
+            3600
+          ],
+          "truth": 3,
+          "iou": 0.7232142857142857,
+          "target_purity": 0.7232142857142857,
+          "start_error": -7,
+          "end_error": 24,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.6291528144157544,
+            "max_score": 0.6291528144157544,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.8269766923536377,
+            "max_score": 0.8269766923536377,
+            "accepted": true
+          }
+        }
+      ],
+      "oracle_correct": 82,
+      "candidate_correct": 78,
+      "fixed_by_oracle": 3,
+      "lost_by_oracle": 0,
+      "median_true_score_delta": 0.01980192131648606
+    }
+  },
+  "val": {
+    "all": {
+      "n": 85,
+      "participants": 4,
+      "true_counts": [
+        77,
+        2,
+        0,
+        4,
+        2
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.2709710240364075,
+          0.9595780372619629,
+          1.8143943786621095
+        ],
+        [
+          -2.2748250484466555,
+          -1.2098950147628784,
+          -0.4454447031021116
+        ],
+        [
+          -1.1027855396270752,
+          -0.2573612928390503,
+          0.2991257309913636
+        ],
+        [
+          -1.4975934028625488,
+          -0.4760551452636719,
+          0.3663135111331944
+        ],
+        [
+          -1.0497942924499513,
+          -0.28671905398368835,
+          0.06693810224533081
+        ]
+      ],
+      "top_target_score": [
+        0.3147037513403006,
+        0.374338739023938,
+        0.582210017973839
+      ],
+      "top_two_prob_gap": [
+        0.014509230921692018,
+        0.09381167953908831,
+        0.3891666527525494
+      ],
+      "target_minus_other_logit": [
+        -2.196926176548004,
+        -0.8802598118782043,
+        0.09162114858627321
+      ],
+      "other_wins_5way": 71,
+      "threshold_accepts": 6,
+      "top_target_correct": 4,
+      "original_annotation_frame_counts": {
+        "G06": 57,
+        "B0B": 1346,
+        "G09": 204,
+        "B0A": 1440,
+        "G07": 261,
+        "D0X": 2560,
+        "G08": 325,
+        "G11": 313,
+        "G10": 264,
+        "G01": 230,
+        "G04": 60,
+        "G03": 184,
+        "G02": 129,
+        "G05": 100
+      }
+    },
+    "matched": {
+      "n": 8,
+      "participants": 4,
+      "true_counts": [
+        0,
+        2,
+        0,
+        4,
+        2
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.2827777236700058,
+          0.7142029404640198,
+          1.5443952083587646
+        ],
+        [
+          -2.3615331172943117,
+          -1.7571953535079956,
+          0.03733371496200533
+        ],
+        [
+          -1.6963031768798829,
+          -0.030682449229061604,
+          0.1386629782617092
+        ],
+        [
+          -3.785379147529602,
+          -0.12170026078820229,
+          0.5109090894460677
+        ],
+        [
+          -2.2060637712478637,
+          -0.17061030119657516,
+          0.04292488507926463
+        ]
+      ],
+      "top_target_score": [
+        0.3276276282632384,
+        0.4467848561150656,
+        0.7637748042264271
+      ],
+      "top_two_prob_gap": [
+        0.017656518588037108,
+        0.1567060204817341,
+        0.6439498180658656
+      ],
+      "target_minus_other_logit": [
+        -1.6906007340177893,
+        -0.48899881541728973,
+        0.33620633184909815
+      ],
+      "other_wins_5way": 6,
+      "threshold_accepts": 2,
+      "top_target_correct": 4,
+      "original_annotation_frame_counts": {
+        "G11": 159,
+        "B0A": 52,
+        "B0B": 133,
+        "G10": 234,
+        "G05": 81,
+        "D0X": 69
+      }
+    },
+    "verified_other": {
+      "n": 67,
+      "participants": 4,
+      "true_counts": [
+        67,
+        0,
+        0,
+        0,
+        0
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.4200499057769776,
+          0.9637789726257324,
+          1.8188183069229125
+        ],
+        [
+          -2.1642799854278563,
+          -1.211249828338623,
+          -0.6164110541343689
+        ],
+        [
+          -0.9806983351707459,
+          -0.2952616214752197,
+          0.3335207641124725
+        ],
+        [
+          -1.3584169149398804,
+          -0.49334046244621277,
+          0.24079253077507
+        ],
+        [
+          -0.8366886258125306,
+          -0.3099094033241272,
+          0.04257609918713566
+        ]
+      ],
+      "top_target_score": [
+        0.3151680408770848,
+        0.36749819573985026,
+        0.5469780670518232
+      ],
+      "top_two_prob_gap": [
+        0.014671688263094585,
+        0.09381167953908831,
+        0.3099544972018646
+      ],
+      "target_minus_other_logit": [
+        -2.204125666618347,
+        -0.993769109249115,
+        0.04700542688369743
+      ],
+      "other_wins_5way": 59,
+      "threshold_accepts": 2,
+      "top_target_correct": 0,
+      "original_annotation_frame_counts": {
+        "G09": 204,
+        "B0A": 1337,
+        "G07": 261,
+        "D0X": 2054,
+        "G08": 325,
+        "G01": 230,
+        "G04": 60,
+        "G03": 184,
+        "B0B": 1109,
+        "G02": 129
+      }
+    },
+    "partial_or_duplicate": {
+      "n": 10,
+      "participants": 4,
+      "true_counts": [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      "logit_p10_p50_p90": [
+        [
+          0.12080008164048195,
+          0.7397980690002441,
+          1.6847821831703185
+        ],
+        [
+          -2.392205286026001,
+          -0.6281397342681885,
+          0.06503226161002984
+        ],
+        [
+          -1.414352285861969,
+          -0.17165575921535492,
+          0.2467429846525192
+        ],
+        [
+          -1.920643401145935,
+          -0.1479749046266079,
+          0.4424650579690932
+        ],
+        [
+          -1.325861895084381,
+          -0.07602468621917069,
+          0.17679319530725476
+        ]
+      ],
+      "top_target_score": [
+        0.28724848777180195,
+        0.3685025790262815,
+        0.6727273723995162
+      ],
+      "top_two_prob_gap": [
+        0.018046866541141394,
+        0.0766559903466498,
+        0.5032324535891282
+      ],
+      "target_minus_other_logit": [
+        -1.447286954522133,
+        -0.14252518489956856,
+        0.40860503911972007
+      ],
+      "other_wins_5way": 6,
+      "threshold_accepts": 2,
+      "top_target_correct": 0,
+      "original_annotation_frame_counts": {
+        "G06": 57,
+        "B0B": 104,
+        "D0X": 437,
+        "G11": 154,
+        "B0A": 51,
+        "G05": 19,
+        "G10": 30
+      }
+    },
+    "alignment": {
+      "rows": [
+        {
+          "source": "1CV12_23_R_#117",
+          "person": "1CV12_23",
+          "candidate": [
+            2160,
+            2220
+          ],
+          "truth": 4,
+          "iou": 0.7777777777777778,
+          "target_purity": 0.9333333333333333,
+          "start_error": 12,
+          "end_error": 4,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.23080616147694005,
+            "max_score": 0.4818122829530291,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.23000915617536505,
+            "max_score": 0.5031460559665065,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_23_R_#117",
+          "person": "1CV12_23",
+          "candidate": [
+            2992,
+            3072
+          ],
+          "truth": 3,
+          "iou": 0.675,
+          "target_purity": 0.675,
+          "start_error": -22,
+          "end_error": 4,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.4117574292771021,
+            "max_score": 0.4117574292771021,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.4592594656861487,
+            "max_score": 0.4592594656861487,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_23_R_#120",
+          "person": "1CV12_23",
+          "candidate": [
+            272,
+            380
+          ],
+          "truth": 3,
+          "iou": 0.5185185185185185,
+          "target_purity": 0.5185185185185185,
+          "start_error": -18,
+          "end_error": 34,
+          "candidate_scores": {
+            "top": 3,
+            "true_score": 0.35084740753477744,
+            "max_score": 0.35084740753477744,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 3,
+            "true_score": 0.3538352032958474,
+            "max_score": 0.3538352032958474,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_23_R_#120",
+          "person": "1CV12_23",
+          "candidate": [
+            3340,
+            3428
+          ],
+          "truth": 1,
+          "iou": 0.6477272727272727,
+          "target_purity": 0.6477272727272727,
+          "start_error": -14,
+          "end_error": 17,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.9184241987878304,
+            "max_score": 0.9184241987878304,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.97872718792368,
+            "max_score": 0.97872718792368,
+            "accepted": true
+          }
+        },
+        {
+          "source": "1CV12_23_R_#120",
+          "person": "1CV12_23",
+          "candidate": [
+            3588,
+            3748
+          ],
+          "truth": 4,
+          "iou": 0.64375,
+          "target_purity": 0.64375,
+          "start_error": -57,
+          "end_error": 0,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.29640477615521643,
+            "max_score": 0.3258728733763383,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.2732354020949744,
+            "max_score": 0.33860465736461504,
+            "accepted": false
+          }
+        },
+        {
+          "source": "1CV12_22_R_#115",
+          "person": "1CV12_22",
+          "candidate": [
+            4108,
+            4164
+          ],
+          "truth": 3,
+          "iou": 0.5125,
+          "target_purity": 0.7321428571428571,
+          "start_error": 24,
+          "end_error": 15,
+          "candidate_scores": {
+            "top": 2,
+            "true_score": 0.14284482665881665,
+            "max_score": 0.595389884868399,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 2,
+            "true_score": 0.11336854647981183,
+            "max_score": 0.6007604278753965,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_19_R_#20",
+          "person": "4CM11_19",
+          "candidate": [
+            304,
+            328
+          ],
+          "truth": 1,
+          "iou": 0.6486486486486487,
+          "target_purity": 1.0,
+          "start_error": 6,
+          "end_error": -7,
+          "candidate_scores": {
+            "top": 1,
+            "true_score": 0.69749649227154,
+            "max_score": 0.69749649227154,
+            "accepted": true
+          },
+          "oracle_scores": {
+            "top": 1,
+            "true_score": 0.6269533776378802,
+            "max_score": 0.6269533776378802,
+            "accepted": true
+          }
+        },
+        {
+          "source": "4CM11_2_R_#40",
+          "person": "4CM11_2",
+          "candidate": [
+            3772,
+            3924
+          ],
+          "truth": 3,
+          "iou": 0.5,
+          "target_purity": 0.5460526315789473,
+          "start_error": 14,
+          "end_error": 69,
+          "candidate_scores": {
+            "top": 4,
+            "true_score": 0.30404308732965785,
+            "max_score": 0.3283796660719098,
+            "accepted": false
+          },
+          "oracle_scores": {
+            "top": 4,
+            "true_score": 0.29633460452853666,
+            "max_score": 0.3236733142700801,
+            "accepted": false
+          }
+        }
+      ],
+      "oracle_correct": 4,
+      "candidate_correct": 4,
+      "fixed_by_oracle": 0,
+      "lost_by_oracle": 0,
+      "median_true_score_delta": -0.004252744051348095
+    }
+  },
+  "shift": {
+    "matched": {
+      "dino": {
+        "median_abs_standardized_mean_shift": 0.6438420414924622,
+        "train_other_person_nearest_cosine": [
+          0.08052992820739746,
+          0.19083356857299805,
+          0.27460460662841796
+        ],
+        "val_nearest_train_cosine": [
+          0.26058231592178344,
+          0.2800261974334717,
+          0.305396181344986
+        ]
+      },
+      "head_descriptor": {
+        "median_abs_standardized_mean_shift": 0.3631293475627899,
+        "train_other_person_nearest_cosine": [
+          0.040962386131286624,
+          0.09328973293304443,
+          0.18496196269989013
+        ],
+        "val_nearest_train_cosine": [
+          0.08871219754219055,
+          0.1135491132736206,
+          0.14322636127471922
+        ]
+      }
+    },
+    "verified_other": {
+      "dino": {
+        "median_abs_standardized_mean_shift": 0.6308954954147339,
+        "train_other_person_nearest_cosine": [
+          0.08352291584014893,
+          0.14370480179786682,
+          0.2609436511993408
+        ],
+        "val_nearest_train_cosine": [
+          0.2367601990699768,
+          0.28111332654953003,
+          0.34023059606552125
+        ]
+      },
+      "head_descriptor": {
+        "median_abs_standardized_mean_shift": 0.2781744599342346,
+        "train_other_person_nearest_cosine": [
+          0.03966405987739563,
+          0.07395237684249878,
+          0.14090988039970398
+        ],
+        "val_nearest_train_cosine": [
+          0.05088542699813843,
+          0.0834006667137146,
+          0.15969731807708737
+        ]
+      }
+    }
+  },
+  "presence": {
+    "train": {
+      "explicit_other": {
+        "roc_auc": 0.823226921178213,
+        "reliability": {
+          "n": 339,
+          "ece": 0.2552931902569395,
+          "brier": 0.2202496168170012,
+          "bins": [
+            {
+              "bin": 0,
+              "n": 20,
+              "confidence": 0.14075914343577306,
+              "frequency": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 73,
+              "confidence": 0.30210527105572316,
+              "frequency": 0.0547945205479452
+            },
+            {
+              "bin": 2,
+              "n": 89,
+              "confidence": 0.5027996499176084,
+              "frequency": 0.20224719101123595
+            },
+            {
+              "bin": 3,
+              "n": 104,
+              "confidence": 0.6927537517290887,
+              "frequency": 0.3942307692307692
+            },
+            {
+              "bin": 4,
+              "n": 53,
+              "confidence": 0.9033955626193749,
+              "frequency": 0.7547169811320755
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.49127715893971075,
+          0.7647872297083226,
+          0.9835901948297956
+        ],
+        "negative_quantiles": [
+          0.21819003723698593,
+          0.4821537125262872,
+          0.7228925982503766
+        ]
+      },
+      "constant_gate": {
+        "roc_auc": 0.5,
+        "reliability": {
+          "n": 339,
+          "ece": 0.0,
+          "brier": 0.21151921754944703,
+          "bins": [
+            {
+              "bin": 1,
+              "n": 339,
+              "confidence": 0.30383480825958703,
+              "frequency": 0.30383480825958703
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.30383480825958703,
+          0.30383480825958703,
+          0.30383480825958703
+        ],
+        "negative_quantiles": [
+          0.30383480825958703,
+          0.30383480825958703,
+          0.30383480825958703
+        ]
+      },
+      "learned_gate": {
+        "roc_auc": 0.8173029455323351,
+        "reliability": {
+          "n": 339,
+          "ece": 0.14651665560747323,
+          "brier": 0.17606112936383095,
+          "bins": [
+            {
+              "bin": 0,
+              "n": 52,
+              "confidence": 0.12398235177477965,
+              "frequency": 0.038461538461538464
+            },
+            {
+              "bin": 1,
+              "n": 90,
+              "confidence": 0.2967191176282035,
+              "frequency": 0.14444444444444443
+            },
+            {
+              "bin": 2,
+              "n": 102,
+              "confidence": 0.49250653649077697,
+              "frequency": 0.2549019607843137
+            },
+            {
+              "bin": 3,
+              "n": 76,
+              "confidence": 0.6855700855192385,
+              "frequency": 0.5921052631578947
+            },
+            {
+              "bin": 4,
+              "n": 19,
+              "confidence": 0.9041236921360618,
+              "frequency": 0.8947368421052632
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.3867143392562866,
+          0.642620861530304,
+          0.8909801483154297
+        ],
+        "negative_quantiles": [
+          0.12191314250230789,
+          0.3682839125394821,
+          0.6316621005535126
+        ]
+      }
+    },
+    "val": {
+      "explicit_other": {
+        "roc_auc": 0.6305970149253731,
+        "reliability": {
+          "n": 75,
+          "ece": 0.3842024548025259,
+          "brier": 0.25975359193399733,
+          "bins": [
+            {
+              "bin": 0,
+              "n": 6,
+              "confidence": 0.1263658971414546,
+              "frequency": 0.16666666666666666
+            },
+            {
+              "bin": 1,
+              "n": 18,
+              "confidence": 0.31019675154356735,
+              "frequency": 0.05555555555555555
+            },
+            {
+              "bin": 2,
+              "n": 27,
+              "confidence": 0.5017597215675983,
+              "frequency": 0.07407407407407407
+            },
+            {
+              "bin": 3,
+              "n": 22,
+              "confidence": 0.6698397683255479,
+              "frequency": 0.18181818181818182
+            },
+            {
+              "bin": 4,
+              "n": 2,
+              "confidence": 0.8529252898833746,
+              "frequency": 0.0
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.2398151543045457,
+          0.606455807886371,
+          0.7138026280393398
+        ],
+        "negative_quantiles": [
+          0.23435365394755714,
+          0.4897795424970355,
+          0.7010065272472775
+        ]
+      },
+      "constant_gate": {
+        "roc_auc": 0.5,
+        "reliability": {
+          "n": 75,
+          "ece": 0.19716814159292034,
+          "brier": 0.1341641649480948,
+          "bins": [
+            {
+              "bin": 1,
+              "n": 75,
+              "confidence": 0.30383480825958703,
+              "frequency": 0.10666666666666667
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.30383480825958703,
+          0.30383480825958703,
+          0.30383480825958703
+        ],
+        "negative_quantiles": [
+          0.30383480825958703,
+          0.30383480825958703,
+          0.30383480825958703
+        ]
+      },
+      "learned_gate": {
+        "roc_auc": 0.582089552238806,
+        "reliability": {
+          "n": 75,
+          "ece": 0.3192093985527754,
+          "brier": 0.2257275317196131,
+          "bins": [
+            {
+              "bin": 0,
+              "n": 12,
+              "confidence": 0.12378642537320654,
+              "frequency": 0.08333333333333333
+            },
+            {
+              "bin": 1,
+              "n": 20,
+              "confidence": 0.30650964230298994,
+              "frequency": 0.05
+            },
+            {
+              "bin": 2,
+              "n": 29,
+              "confidence": 0.5082216149774091,
+              "frequency": 0.13793103448275862
+            },
+            {
+              "bin": 3,
+              "n": 12,
+              "confidence": 0.6587623804807663,
+              "frequency": 0.16666666666666666
+            },
+            {
+              "bin": 4,
+              "n": 2,
+              "confidence": 0.8407497704029083,
+              "frequency": 0.0
+            }
+          ]
+        },
+        "positive_quantiles": [
+          0.2378086969256401,
+          0.4929593652486801,
+          0.6479361176490783
+        ],
+        "negative_quantiles": [
+          0.15705493092536926,
+          0.4320518374443054,
+          0.6462212920188903
+        ]
+      }
+    }
+  },
+  "conditional_validation": {
+    "released": {
+      "n": 8,
+      "nll": 1.0248583740014638,
+      "multiclass_brier": 0.5803540452017633,
+      "reliability": {
+        "n": 8,
+        "ece": 0.10976735662777316,
+        "brier": 0.20828123994331224,
+        "bins": [
+          {
+            "bin": 1,
+            "n": 3,
+            "confidence": 0.3350333156610085,
+            "frequency": 0.3333333333333333
+          },
+          {
+            "bin": 2,
+            "n": 3,
+            "confidence": 0.49631986569951003,
+            "frequency": 0.3333333333333333
+          },
+          {
+            "bin": 3,
+            "n": 1,
+            "confidence": 0.69749649227154,
+            "frequency": 1.0
+          },
+          {
+            "bin": 4,
+            "n": 1,
+            "confidence": 0.9184241987878304,
+            "frequency": 1.0
+          }
+        ]
+      },
+      "confusion": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "temperature": {
+      "n": 8,
+      "nll": 1.16436356265476,
+      "multiclass_brier": 0.6442071713933817,
+      "reliability": {
+        "n": 8,
+        "ece": 0.26579905307154916,
+        "brier": 0.2554915695283839,
+        "bins": [
+          {
+            "bin": 1,
+            "n": 4,
+            "confidence": 0.3470112541645043,
+            "frequency": 0.5
+          },
+          {
+            "bin": 2,
+            "n": 1,
+            "confidence": 0.4573988121874155,
+            "frequency": 0.0
+          },
+          {
+            "bin": 3,
+            "n": 1,
+            "confidence": 0.6587120893637832,
+            "frequency": 1.0
+          },
+          {
+            "bin": 4,
+            "n": 2,
+            "confidence": 0.857875359203389,
+            "frequency": 0.5
+          }
+        ]
+      },
+      "confusion": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  "conditional_train": {
+    "n": 103,
+    "nll": 0.6315203029949604,
+    "multiclass_brier": 0.35582268501299846,
+    "reliability": {
+      "n": 103,
+      "ece": 0.13079807980342906,
+      "brier": 0.1703027316887503,
+      "bins": [
+        {
+          "bin": 1,
+          "n": 18,
+          "confidence": 0.35551600071026956,
+          "frequency": 0.5555555555555556
+        },
+        {
+          "bin": 2,
+          "n": 32,
+          "confidence": 0.4671365894951227,
+          "frequency": 0.59375
+        },
+        {
+          "bin": 3,
+          "n": 26,
+          "confidence": 0.6848683310317066,
+          "frequency": 0.8461538461538461
+        },
+        {
+          "bin": 4,
+          "n": 27,
+          "confidence": 0.9397615665479132,
+          "frequency": 1.0
+        }
+      ]
+    },
+    "confusion": [
+      [
+        22,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        19,
+        5,
+        3
+      ],
+      [
+        0,
+        1,
+        18,
+        8
+      ],
+      [
+        0,
+        1,
+        5,
+        19
+      ]
+    ]
+  }
+}

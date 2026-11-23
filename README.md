@@ -29,6 +29,8 @@ I separated finding a candidate interval from choosing its gesture label. A dete
 
 Select **Real hand gestures · two-stage pilot** to see the proposed intervals, accepted labels and timestamps on a local upload. The original marker and gesture modes remain available. [Failure analysis, measurements and reproduction](docs/two-stage.md) · [Locked selection protocol](docs/two-stage-protocol.md)
 
+I also tested rejection rules on the fixed training and validation candidates. The margin rule removed two false acceptances, and none of the alternatives recovered more correct gestures across multiple validation participants. [Validation-only classifier diagnostic](docs/candidate-rejection.md)
+
 ## Synthetic marker experiment
 
 | 96 held-out clips, 192 movement events | Independent frame | Temporal CNN |

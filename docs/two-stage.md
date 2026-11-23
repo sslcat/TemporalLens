@@ -107,3 +107,7 @@ I use the new mode for inspecting candidate intervals and the labels that surviv
 I repeated fitting and validation selection and reproduced every fitted tensor, selected threshold and validation metric. Re-running the locked test evaluation reproduced the same JSON byte for byte. All 29 automated tests passed with one Starlette dependency deprecation warning. I verified all three modes in Edge at 1280 and 390 pixels, including real decoding, playback, candidate and event seeking, empty results and recovery from an invalid upload. The seventh validation crop supplied a positive UI example. It produced two intervals and one throw-left label, spanning 3.60–6.53 s against the annotated 4.07–5.97 s. The private clip and screenshots stayed out of Git.
 
 I used OpenAI Codex to implement and run the study, check the application and prepare this report. The follow-up heads, numeric results and derived figures use the original pilot's attribution and CC BY 4.0 release terms. [Attribution](../artifacts/two-stage/NOTICE.md)
+
+## Validation-only rejection follow-up
+
+I traced the eight well-localized validation proposals through the frozen classifier. Its top label was correct on four. Only two passed the .60 threshold, and both recoverable rejections came from one participant. Temperature scaling, per-class cutoffs and a learned background gate did not meet the prespecified improvement rule. I kept the original configuration. [Candidate diagnostics, calibration and confusion matrices](candidate-rejection.md)

@@ -1,0 +1,3 @@
+# IPN Hand rejection diagnostic
+
+I release the diagnostic gate, numeric results and derived figures here under CC BY 4.0, with the same IPN Hand and DINOv2 attributions as the preceding studies. This analysis uses original training and validation annotations, fixed proposal intervals, cached model outputs and a new binary logistic gate. Credit the IPN Hand authors for their data and TemporalLens contributors for the analysis. The folder contains no original footage or image embeddings. [IPN Hand attribution](../ipn/NOTICE.md) · [Two-stage model attribution](../two-stage/NOTICE.md) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
