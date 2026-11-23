@@ -1,6 +1,6 @@
 # Licensing and attribution
 
-I release the project-authored source, documentation, renderer, rendered dataset, annotation manifest, original experiment figures and learned weights under the accompanying MIT license. Please preserve its copyright and permission notice when redistributing them. All training imagery comes from the renderer. The scope of this grant is the material authored for TemporalLens.
+I release the project-authored source, documentation, renderer, rendered dataset, synthetic annotation manifest, marker experiment figures and marker weights under the accompanying MIT license. Please preserve its copyright and permission notice when redistributing them. The marker experiment uses imagery from the renderer. The gesture experiment uses original IPN Hand RGB frames under CC BY 4.0 and the separately downloaded Apache-2.0 DINOv2 encoder. The pilot artifacts carry their own [attribution and license](artifacts/ipn/NOTICE.md). The scope of this grant is the material authored for TemporalLens.
 
 PyTorch supplies tensor operations and CUDA kernels. PyAV and its FFmpeg libraries supply video decoding and encoding. Pillow draws the marker, NumPy handles coordinates and Matplotlib renders the plots. FastAPI, Starlette and Uvicorn serve the local app. Pytest, HTTPX and Playwright support the checks. Each dependency has its own distribution terms. A source checkout installs these packages separately. Anyone redistributing a bundled environment should review the notices in the wheels, including FFmpeg and codec components.
 

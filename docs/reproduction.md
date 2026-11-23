@@ -49,3 +49,44 @@ I regenerated all 396 videos in a second working directory. Every encoded SHA-25
 All 18 local pytest cases passed on the release suite. They include MP4 and WebM, sampling above and below 10 Hz, both duration bounds, an unsupported scene, a stationary marker, malformed and oversized uploads, temporary-file cleanup, host filtering and CPU inference. Starlette's test client emitted one dependency deprecation warning. Ruff reported no findings. I also exercised CUDA inference through the live FastAPI app in Edge, including playback, upload, error recovery, seeking through both controls and a 390-pixel mobile layout. [Desktop capture](../artifacts/workspace.png)
 
 The GitHub Actions workflow is prepared for a Linux CPU runner. Remote CI execution awaits publication approval.
+
+## Run or reproduce the IPN Hand gesture pilot
+
+For app inference, activate the project environment configured above, install the gesture extras, and explicitly fetch the hash-checked public DINOv2 encoder. These commands run from the repository root. The application loads that encoder from local disk on first gesture use. The shipped `artifacts/ipn/gesture.pt` contains the head and train-only normalization. The synthetic demo works without the optional encoder.
+
+```powershell
+python -m pip install -r requirements-gesture.txt
+python -m research.ipn_setup
+python -m uvicorn temporallens.api:app --host 127.0.0.1 --port 18731
+```
+
+Select **Real hand gestures · IPN pilot** and upload a continuous 5–15 s clip. The four supported classes and the detector's limitations appear in the workspace. The API accepts the same bounded video body at `/api/analyze?mode=gesture`.
+
+For research reproduction use a fresh local checkout. The next commands download 8.99 GB of official RGB archives and regenerate pilot outputs. Allow at least 20 GB of disk and use CUDA for the pilot. The metadata/encoder setup verifies pinned digests. The split manifest is fixed at commit `5237f80`.
+
+```powershell
+python -m pip install -r requirements-ipn-research.txt
+python -m research.ipn_setup --metadata
+python -m research.ipn_fetch
+python -m research.ipn_ingest index
+python -m research.ipn_ingest extract
+python -m research.ipn_integrity
+python -m research.ipn_features
+python -m research.ipn_train
+python -m research.ipn_train --replay
+python -m research.ipn_evaluate
+python -m research.ipn_diagnostics
+python -m research.ipn_figures
+python -m pytest -q
+```
+
+With the updated Uvicorn instance running, use a second shell to create private QA uploads from validation data, then verify desktop and mobile behavior. The fixture search selects a clip with a detectable event so the test can operate the timeline. The held-out evaluation uses every designated source.
+
+```powershell
+python -m research.ipn_ui_fixture
+$env:TL_BROWSER = 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+python tests/ipn_browser_smoke.py
+python -m research.ipn_ui_fixture --latency
+```
+
+Original archives, derived JPEGs, feature caches, private browser captures and per-candidate weights stay under ignored `work/`. The public release includes the four primary heads and numeric evidence. Software and GPU differences may change timing and floating-point output. [Pilot environment](../artifacts/ipn/environment.json) · [Data attribution](../artifacts/ipn/NOTICE.md)

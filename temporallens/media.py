@@ -27,7 +27,8 @@ def embedding(rgb):
     return (float(x.mean() / w), float(y.mean() / h)), compact >= 0.40
 
 
-def decode(path):
+def decode(path, *, gesture_frames=False):
+    rate = 7.5 if gesture_frames else HZ
     path = Path(path)
     if path.stat().st_size > MAX_BYTES:
         raise VideoError("The file exceeds 24 MiB.")
@@ -82,12 +83,25 @@ def decode(path):
                     or (last is not None and t <= last)
                 ):
                     raise VideoError("Use 5–15 seconds with increasing timestamps.")
-                # Sample the frame displayed at each 100 ms tick (also for VFR).
-                while previous is not None and len(features) / HZ < t - 1e-6:
+                # Sample the frame displayed at each model tick (also for VFR).
+                while previous is not None and len(features) / rate < t - 1e-6:
                     features.append(previous[0])
                     valid.append(previous[1])
-                rgb = frame.reformat(width=96, height=64, format="rgb24").to_ndarray()
-                previous = embedding(rgb)
+                if gesture_frames:
+                    scale = 320 / max(frame.width, frame.height)
+                    previous = (
+                        frame.reformat(
+                            width=max(1, round(frame.width * scale)),
+                            height=max(1, round(frame.height * scale)),
+                            format="rgb24",
+                        ).to_ndarray(),
+                        True,
+                    )
+                else:
+                    rgb = frame.reformat(
+                        width=96, height=64, format="rgb24"
+                    ).to_ndarray()
+                    previous = embedding(rgb)
                 last = t
                 period = (
                     float(frame.duration * frame.time_base)
@@ -99,9 +113,13 @@ def decode(path):
             duration = last + period
             if not 4.999 <= duration <= 15.001:
                 raise VideoError("Choose a video lasting 5–15 seconds.")
-            while len(features) / HZ < duration - 1e-6:
+            while len(features) / rate < duration - 1e-6:
                 features.append(previous[0])
                 valid.append(previous[1])
-            return np.asarray(features, np.float32), np.asarray(valid), duration
+            return (
+                (features if gesture_frames else np.asarray(features, np.float32)),
+                np.asarray(valid),
+                duration,
+            )
     except (av.error.FFmpegError, OverflowError, ZeroDivisionError) as error:
         raise VideoError("The video is damaged or unsupported.") from error

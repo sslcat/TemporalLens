@@ -9,3 +9,7 @@ I choose each checkpoint independently by minimum validation weighted cross-entr
 The shared handcrafted encoder has zero learned parameters. The frame head is a per-sample MLP implemented with pointwise convolutions. The temporal head adds normalized neighborhood offsets. Doubling down on a large pretrained vision encoder would make visual appearance a second experimental variable and require unrelated weights. A learned encoder becomes more relevant with multiple real subjects and backgrounds.
 
 See [reproduction](reproduction.md) for commands, [math](math.md) for equations and [evaluation](evaluation.md) for measurements.
+
+## IPN Hand pilot training
+
+I cached one 1,536-dimensional FP16 embedding per sampled tick and used 378 padded training windows per epoch. Inputs to the convolution include a seven-tick halo on each side. Training targets exclude the halo and padded tail. Each neural model used the same train/validation partition, three seeds, two learning rates, stopping patience and validation decoder search. The CPU computed classical Farnebäck flow. A regularized logistic baseline was fitted on the local RTX using L-BFGS. The two regularization values and 18 neural candidates took 31.95 s of fitting. The 20 fits include the ultimately selected candidates. [Loss histories and hyperparameters](../artifacts/ipn/training.json) · [Frozen protocol](ipn-protocol.md) · [Measured results](ipn-results.md)

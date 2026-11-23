@@ -15,16 +15,28 @@
         >Temporal<span>Lens</span></a
       ><span class="head-divider"></span
       ><span class="nav-active">Workspace</span
-      ><a class="research" href="/assets/results.png" target="_blank"
+      ><a
+        id="result-link"
+        class="research"
+        href="/assets/results.png"
+        target="_blank"
         >Experiment results ↗</a
       ><span id="status" class="status">Connecting</span>
     </header>
     <main>
       <section class="intro">
         <div>
-          <div class="eyebrow">VIDEO ANALYSIS</div>
+          <label class="mode-picker"
+            >Analysis mode
+            <select id="mode">
+              <option value="marker">Synthetic marker</option>
+              <option value="gesture">Real hand gestures · IPN pilot</option>
+            </select></label
+          >
           <h1>Motion workspace</h1>
-          <p>Inspect directional motion in short, single-marker clips.</p>
+          <p id="subtitle">
+            Inspect directional motion in short, single-marker clips.
+          </p>
         </div>
         <div class="commands">
           <button id="demo">Load example</button
@@ -67,7 +79,7 @@
           <div class="model-note">
             <span class="dot"></span>
             <div>
-              <b>Temporal CNN</b
+              <b id="model-name">Temporal CNN</b
               ><small>Scores are uncalibrated softmax outputs.</small>
             </div>
           </div>
@@ -83,8 +95,11 @@
         <div class="timeline-note">Select an event to seek the preview.</div>
       </section>
       <footer>
-        <span>Input scope</span> One bright cyan marker on a dark background.
-        Human actions and other subjects are unsupported.
+        <span>Input scope</span>
+        <span id="scope"
+          >One bright cyan marker on a dark background. Human actions and other
+          subjects are unsupported.</span
+        >
         <div>MP4 / WebM · 5–15 s · 24 MiB max · up to 1080p</div>
       </footer>
     </main>

@@ -51,3 +51,7 @@ The cut-and-splice control exposed a more consequential failure. All 71 incorrec
 I ran two **post-hoc diagnostics** after seeing the splice result. I kept the weights and thresholds fixed. First I rerendered the same held-out scene seeds with the two directions exchanged and a continuous path. The temporal head recovered 96/96 new lists with 0.9950 mean IoU. Together, the two controls implicate the discontinuity at the edit. These rerenders reuse scene seeds and do not add independent subjects or independent test samples.
 
 Second I classified the native-pixel centroid displacement from the previous tick by its dominant signed axis, assigning still below 0.5 pixels. This untrained control also recognized every oracle event. It recovered 83/96 complete sequences (86.46%) and scored 0.9455 mean IoU. On this clean task the learned head’s advantage over that simple motion rule was in segmentation and sequence recovery. Its advantage over single frames was much larger. [Control results](../artifacts/controls.json)
+
+## Held-out real-video extension
+
+I evaluated four gesture classifiers on eight held-out IPN Hand participants. The temporal CNN reached .404 macro F1 with supplied event boundaries and .025 segment F1@.50 on natural streams. None of the four models recovered a complete held-out list. Per-class precision/recall, confusion matrices, participant intervals, three-seed variation and the clean/reverse/shuffle/AB–BA controls are in the [real-video evaluation](ipn-results.md).

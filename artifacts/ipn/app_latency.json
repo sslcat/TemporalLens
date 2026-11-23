@@ -1,0 +1,20 @@
+{
+  "device": "cuda",
+  "upload_seconds": 10.0,
+  "warmups": 1,
+  "requests": 10,
+  "latency_ms": [
+    250.20389998098835,
+    264.4917999859899,
+    275.32119999523275,
+    307.7284999890253,
+    272.6163000043016,
+    242.8315000142902,
+    264.70560001325794,
+    263.31480001681484,
+    319.93019999936223,
+    324.611600022763
+  ],
+  "median_ms": 268.66095000877976,
+  "method": "Sequential loopback POST of the same validation clip to the loaded model; includes transfer, decode, inference and JSON."
+}

@@ -1,3 +1,19 @@
+.mode-picker {
+  color: var(--muted);
+  font-size: 13px;
+}
+.mode-picker select {
+  margin-left: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--mint);
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+footer #scope {
+  color: var(--muted);
+  font-weight: normal;
+}
 * {
   box-sizing: border-box;
 }
