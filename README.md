@@ -2,7 +2,7 @@
 
 I built TemporalLens to test a question that a video caption alone cannot answer. If a single frame shows a marker halfway across a screen, can a model tell which way it is travelling, when it started, and which movement happened next?
 
-TemporalLens is a local FastAPI application with two PyTorch experiments. Its synthetic mode follows a cyan marker moving left, right, up or down. Its experimental real-video mode detects four touchless hand gestures. The UI previews a short video, runs the released temporal checkpoint and places each detected event on a seekable timeline. The bundled eight-second example comes from the held-out set.
+TemporalLens is a local FastAPI application for the synthetic marker experiment and two real-video gesture studies. Its synthetic mode follows a cyan marker moving left, right, up or down. Its experimental real-video mode detects four touchless hand gestures. The UI previews a short video, runs the released temporal checkpoint and places each detected event on a seekable timeline. The bundled eight-second example comes from the held-out set.
 
 ![The live local workspace with measured event boundaries](artifacts/workspace.png)
 
@@ -22,6 +22,12 @@ Open [TemporalLens on localhost](http://127.0.0.1:18731). Select an entry in the
 I trained a frozen-feature gesture system on original IPN Hand recordings and tested it on eight held-out participants. Known-boundary macro F1 was .511 for the independent-frame head, .344 for the pooled head, .404 for the temporal CNN and .534 for classical flow. Locating gestures in continuous footage was much harder. The CNN matched 2 of 64 events at IoU .50, produced 93 unmatched detections and recovered 0/16 complete lists. Shuffling isolated gestures reduced its accuracy from 43.8% to 40.6%. These results fell short of the temporal advantage I had set out to measure.
 
 Select **Real hand gestures · IPN pilot** for throw left, throw right, zoom in and zoom out. It displays uncalibrated scores and can return an empty timeline. A fresh checkout needs the optional local encoder. [Setup](docs/reproduction.md) · [Curves, confusion matrices and failure cases](docs/ipn-results.md) · [IPN Hand attribution](artifacts/ipn/NOTICE.md)
+
+## Two-stage gesture experiment
+
+I separated finding a candidate interval from choosing its gesture label. A detector using optical flow and frozen visual scores localized 24/64 held-out gestures at IoU .50 before classification. The validation-selected CNN pipeline correctly labeled and localized 2/64, the same count as the original decoder. False alarms fell from 93 to 62. The paired interval for the F1 change included zero. The fusion comparison reached 9/64 on test and ranked lower on validation.
+
+Select **Real hand gestures · two-stage pilot** to see the proposed intervals, accepted labels and timestamps on a local upload. The original marker and gesture modes remain available. [Failure analysis, measurements and reproduction](docs/two-stage.md) · [Locked selection protocol](docs/two-stage-protocol.md)
 
 ## Synthetic marker experiment
 

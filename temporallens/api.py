@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from importlib.util import find_spec
 from typing import Literal
 import os
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -39,6 +40,7 @@ async def lifespan(app):
     app.state.model.load_state_dict(state)
     app.state.busy = False
     app.state.gesture_model = None
+    app.state.two_stage_model = None
     yield
 
 
@@ -80,6 +82,40 @@ def gesture_ready():
     )
 
 
+def two_stage_config():
+    path = ROOT / "artifacts/two-stage/selection.json"
+    return json.loads(path.read_text()) if path.is_file() else {}
+
+
+def two_stage_ready():
+    cfg = two_stage_config()
+    needs_visual = cfg and (
+        cfg["primary"] != "flow" or cfg["proposal"]["detector"] == "hybrid"
+    )
+    return bool(
+        cfg
+        and find_spec("cv2")
+        and (ROOT / "artifacts/two-stage/heads.pt").is_file()
+        and (ROOT / "artifacts/ipn/flow.pt").is_file()
+        and (not needs_visual or gesture_ready())
+    )
+
+
+def analyze_two_stage(path):
+    from .two_stage import TwoStagePredictor
+
+    frames, _, duration = decode(path, gesture_frames=True)
+    if app.state.two_stage_model is None:
+        try:
+            app.state.two_stage_model = TwoStagePredictor(app.state.device)
+        except (ImportError, OSError, RuntimeError) as exc:
+            raise HTTPException(
+                503,
+                "The local two-stage model could not be loaded. Check the pilot setup.",
+            ) from exc
+    return app.state.two_stage_model.analyze(frames, duration)
+
+
 def analyze_gesture(path):
     frames, _, duration = decode(path, gesture_frames=True)
     if app.state.gesture_model is None:
@@ -102,11 +138,20 @@ def status():
         actions=LABELS[1:],
         gesture_ready=gesture_ready(),
         gesture_actions=GESTURE_LABELS[1:],
+        two_stage_ready=two_stage_ready(),
+        two_stage_classifier=two_stage_config().get("primary"),
     )
 
 
 @app.post("/api/analyze")
-async def upload(request: Request, mode: Literal["marker", "gesture"] = "marker"):
+async def upload(
+    request: Request, mode: Literal["marker", "gesture", "two-stage"] = "marker"
+):
+    if mode == "two-stage" and not two_stage_ready():
+        raise HTTPException(
+            503,
+            "Two-stage mode needs the local pilot weights and optional dependencies. See the reproduction guide.",
+        )
     if mode == "gesture" and not gesture_ready():
         raise HTTPException(
             503,
@@ -133,6 +178,8 @@ async def upload(request: Request, mode: Literal["marker", "gesture"] = "marker"
                             raise HTTPException(413, "The upload exceeds 24 MiB.")
                         dest.write(chunk)
             try:
+                if mode == "two-stage":
+                    return await asyncio.to_thread(analyze_two_stage, path)
                 if mode == "gesture":
                     return await asyncio.to_thread(analyze_gesture, path)
                 return await asyncio.to_thread(
@@ -144,6 +191,11 @@ async def upload(request: Request, mode: Literal["marker", "gesture"] = "marker"
         raise HTTPException(408, "The upload timed out.") from error
     finally:
         app.state.busy = False
+
+
+@app.get("/two-stage-results.png")
+def two_stage_results():
+    return FileResponse(ROOT / "artifacts/two-stage/comparison.png")
 
 
 @app.get("/gesture-results.png")

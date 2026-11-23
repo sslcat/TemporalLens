@@ -415,3 +415,19 @@ footer div {
     display: none;
   }
 }
+
+#candidates {
+  margin: 0 1rem 1rem;
+}
+#candidates summary {
+  cursor: pointer;
+}
+#candidate-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+#candidate-list button {
+  font-variant-numeric: tabular-nums;
+}

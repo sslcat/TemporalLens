@@ -90,3 +90,5 @@ python -m research.ipn_ui_fixture --latency
 ```
 
 Original archives, derived JPEGs, feature caches, private browser captures and per-candidate weights stay under ignored `work/`. The public release includes the four primary heads and numeric evidence. Software and GPU differences may change timing and floating-point output. [Pilot environment](../artifacts/ipn/environment.json) · [Data attribution](../artifacts/ipn/NOTICE.md)
+
+The two-stage follow-up reuses this feature cache and both frozen component heads. Its separate local training, replay, testing and browser commands are in the [two-stage study](two-stage.md#local-execution-and-reproduction).

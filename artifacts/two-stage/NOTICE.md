@@ -1,0 +1,3 @@
+# IPN Hand two-stage study
+
+I release the new pilot heads, numeric results and derived figures in this directory under CC BY 4.0. They use the four-gesture IPN Hand subset, original annotations, frozen DINOv2-S/14 features and fixed component heads documented in the first pilot. Changes include binary target proposals, interval-level fusion, matched comparisons, failure diagnostics and timing measurements. Credit TemporalLens contributors for the model and measurements and the IPN Hand authors for their dataset. Source code retains the project's MIT license. [Full dataset and model attribution](../ipn/NOTICE.md) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)

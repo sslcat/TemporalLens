@@ -24,7 +24,8 @@ function element(tag, text, cls) {
 function showStatus() {
   if (!serverStatus) return;
   $("status").textContent =
-    $("mode").value === "gesture" && !serverStatus.gesture_ready
+    (($("mode").value === "gesture" && !serverStatus.gesture_ready) ||
+      ($("mode").value === "two-stage" && !serverStatus.two_stage_ready))
       ? "Gesture setup required"
       : "● " + serverStatus.device.toUpperCase() + " ONLINE";
 }
@@ -52,7 +53,7 @@ function draw(result) {
     name.append(
       element(
         "b",
-        $("mode").value === "gesture"
+        $("mode").value !== "marker"
           ? ev.label
           : "Move " + ev.label.toLowerCase(),
       ),
@@ -85,10 +86,19 @@ function draw(result) {
     );
   else if (!result.events.length)
     message(
-      $("mode").value === "gesture"
+      $("mode").value !== "marker"
         ? "No gesture met the detection threshold."
         : "No sustained directional motion detected.",
     );
+  if (result.candidates) {
+    $("candidates").hidden = false;
+    $("candidates").querySelector("summary").textContent = "Candidate intervals (" + result.candidates.length + ")";
+    for (const interval of result.candidates) {
+      const button = element("button", interval.start.toFixed(1) + " – " + interval.end.toFixed(1) + " s");
+      button.onclick = () => seek(interval.start);
+      $("candidate-list").append(button);
+    }
+  }
   playhead = element("div", undefined, "playhead");
   $("track").append(playhead);
   updateTime();
@@ -102,6 +112,8 @@ function updateTime() {
 video.addEventListener("timeupdate", updateTime);
 async function load(file) {
   $("mode").disabled = $("demo").disabled = $("upload").disabled = true;
+  $("candidates").hidden = true;
+  $("candidate-list").replaceChildren();
   duration = 0;
   playhead = null;
   for (const id of ["ruler", "track", "details"]) $(id).replaceChildren();
@@ -140,19 +152,22 @@ async function load(file) {
   }
 }
 $("mode").onchange = () => {
-  const gesture = $("mode").value === "gesture";
+  const twoStage = $("mode").value === "two-stage";
+  const gesture = $("mode").value !== "marker";
+  $("candidates").hidden = true;
+  $("candidate-list").replaceChildren();
   showStatus();
   $("demo").hidden = gesture;
-  $("result-link").href = gesture
+  $("result-link").href = twoStage ? "/two-stage-results.png" : gesture
     ? "/gesture-results.png"
     : "/assets/results.png";
-  $("model-name").textContent = gesture
+  $("model-name").textContent = twoStage ? "Target detector + " + ({temporal:"temporal CNN", flow:"optical flow", fusion:"fusion classifier"}[serverStatus?.two_stage_classifier] || "gesture classifier") : gesture
     ? "DINOv2-S/14 + temporal CNN"
     : "Temporal CNN";
-  $("subtitle").textContent = gesture
+  $("subtitle").textContent = twoStage ? "Inspect proposed intervals and their gesture labels." : gesture
     ? "Experimental detector for four touchless hand gestures."
     : "Inspect directional motion in short, single-marker clips.";
-  $("scope").textContent = gesture
+  $("scope").textContent = twoStage ? "Throw left, throw right, zoom in and zoom out. Other movements can trigger false alarms, and target gestures can be missed. Scores describe the label within a candidate." : gesture
     ? "Throw left, throw right, zoom in and zoom out only. The pilot missed most held-out gestures and produced false detections. Other actions are unsupported."
     : "One bright cyan marker on a dark background. Human actions and other subjects are unsupported.";
   if (!gesture) {

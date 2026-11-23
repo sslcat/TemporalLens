@@ -1,0 +1,42 @@
+{
+  "validation": {
+    "temporal": {
+      "matched": 8,
+      "correct": 2,
+      "wrong": 0,
+      "rejected": 6
+    },
+    "flow": {
+      "matched": 8,
+      "correct": 1,
+      "wrong": 1,
+      "rejected": 6
+    },
+    "fusion": {
+      "matched": 8,
+      "correct": 2,
+      "wrong": 0,
+      "rejected": 6
+    }
+  },
+  "test": {
+    "temporal": {
+      "matched": 24,
+      "correct": 2,
+      "wrong": 2,
+      "rejected": 20
+    },
+    "flow": {
+      "matched": 24,
+      "correct": 3,
+      "wrong": 0,
+      "rejected": 21
+    },
+    "fusion": {
+      "matched": 24,
+      "correct": 9,
+      "wrong": 4,
+      "rejected": 11
+    }
+  }
+}
