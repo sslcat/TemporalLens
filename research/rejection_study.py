@@ -266,7 +266,7 @@ def run(replay):
         ),
     )
     results = dict(
-        pipeline_base="ef3c73404581af16e2019f490c06a0c9c79623bc",
+        pipeline_base="e91a55fa1a930522a873410da2255805d588a75f",
         inputs=dict(train=train_hash, val=val_hash, cache_sources=sorted(accessed)),
         gate_fitted=gate_state is not None,
         training_prior=prior,

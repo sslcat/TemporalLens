@@ -18,7 +18,7 @@ python -m uvicorn temporallens.api:app --host 127.0.0.1 --port 18731
 
 Open the workspace and play the bundled eight-second example. Click a timeline block or event row to seek. You can also upload a local MP4 or WebM lasting 5–15 seconds, up to 24 MiB. Scores are uncalibrated. [Open the local app](http://127.0.0.1:18731)
 
-To enable both **IPN pilot** and **two-stage pilot** modes, stop the server, run the two commands below, then restart it. Setup downloads and verifies the frozen encoder once. Inference runs locally. [CUDA setup and research reproduction](docs/reproduction.md)
+To enable the two experimental real-video modes, **IPN pilot** and **two-stage pilot**, stop the server, run the two commands below, then restart it. Setup downloads and verifies the frozen encoder once. Inference runs locally. [CUDA setup and research reproduction](docs/reproduction.md)
 
 ```shell
 python -m pip install -r requirements-gesture.txt opencv-python-headless==4.12.0.88
@@ -40,7 +40,7 @@ I chose IPN Hand because its continuous recordings include the time between prom
 | Two-stage, validation-selected CNN | .404 | 2 | 62 | .031 |
 | Two-stage, fusion comparison | .457 | 9 | 92 | .109 |
 
-For known-boundary macro F1, I supplied the gesture interval and asked for one of four labels. The stream columns score all 16 complete test recordings. A match needs the correct class and temporal intersection over union of at least .50. Every model recovered **0/16** complete event lists. The flow classifier abstained on every stream. [Recognition, detection and participant-level uncertainty](docs/ipn-results.md) · [Two-stage comparison](docs/two-stage.md)
+For known-boundary macro F1, I supplied the gesture interval and asked for one of four labels. The stream columns score all 16 complete test recordings. I count a match when the class is correct and the predicted interval $P$ overlaps the reference interval $R$ enough to give $\mathrm{tIoU}(P,R)=|P\cap R|/|P\cup R|\geq 0.50$. Every model recovered **0/16** complete event lists. The flow classifier abstained on every stream. [Recognition, detection and participant-level uncertainty](docs/ipn-results.md) · [Two-stage comparison](docs/two-stage.md)
 
 I had set a target of a .05 gain over the appearance controls on both recognition and stream F1, plus a ten-percentage-point loss under shuffling. The CNN missed those targets. Shuffling the frames of isolated gestures reduced its accuracy by only 3.1 points. Giving the models two known clips and two possible labels made ordering much easier, even for the frame baseline. [Prespecified comparisons](docs/ipn-protocol.md)
 
@@ -63,5 +63,7 @@ The repository includes experiment protocols, weights, numeric predictions and f
 I release the original code and synthetic assets under MIT. The IPN-derived heads, measurements and figures have separate CC BY 4.0 attribution. The optional DINOv2 encoder is Apache-2.0. I used OpenAI Codex to help design, implement, run, test and document the experiments. The screenshots come from the running application. [License](LICENSE) · [Attribution and upstream rights](NOTICE.md)
 
 ## Let's Connect
+
+If you're an engineer or recruiter, I'd be glad to discuss the implementation, the mathematics behind the timeline, how I set up the experiments, and where the gesture models fell short.
 
 [Find me on GitHub · sslcat](https://github.com/sslcat)

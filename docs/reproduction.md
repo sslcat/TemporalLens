@@ -47,7 +47,7 @@ I regenerated all 396 videos in a second working directory. Every encoded SHA-25
 
 At the original marker checkpoint, all 18 then-existing pytest cases passed. They include MP4 and WebM, sampling above and below 10 Hz, both duration bounds, an unsupported scene, a stationary marker, malformed and oversized uploads, temporary-file cleanup, host filtering and CPU inference. Starlette's test client emitted one dependency deprecation warning. Ruff reported no findings. I also exercised CUDA inference through the live FastAPI app in Edge, including playback, upload, error recovery, seeking through both controls and a 390-pixel mobile layout. [Desktop capture](../artifacts/workspace.png)
 
-The GitHub Actions workflow is prepared for a Linux CPU runner. Remote CI execution awaits publication approval.
+The GitHub Actions workflow is prepared for a Linux CPU runner. Each push to main runs the tests and marker browser check. [Hosted run history](https://github.com/sslcat/TemporalLens/actions/workflows/ci.yml)
 
 ## Run or reproduce the IPN Hand gesture pilot
 
@@ -61,7 +61,7 @@ python -m uvicorn temporallens.api:app --host 127.0.0.1 --port 18731
 
 Select **Real hand gestures · IPN pilot** and upload a continuous 5–15 s clip. The four supported classes and the detector's limitations appear in the workspace. The API accepts the same bounded video body at `/api/analyze?mode=gesture`.
 
-For research reproduction use a fresh local checkout. The next commands download 8.99 GB of official RGB archives and regenerate pilot outputs. Allow at least 20 GB of disk and use CUDA for the pilot. The metadata/encoder setup verifies pinned digests. The split manifest is fixed at commit `5237f80`.
+For research reproduction use a fresh local checkout. The next commands download 8.99 GB of official RGB archives and regenerate pilot outputs. Allow at least 20 GB of disk and use CUDA for the pilot. The metadata/encoder setup verifies pinned digests. The split manifest is fixed at commit `adb9f1d`.
 
 ```powershell
 python -m pip install -r requirements-ipn-research.txt
@@ -111,4 +111,21 @@ I installed the pinned dependencies in two fresh Python 3.13 environments on Win
 
 I regenerated the 396 marker videos. Their manifest, checkpoint tensors, loss histories, predictions and intervention results matched. For IPN Hand I reused the retained original JPEG samples and metadata, verified their recorded source hashes and rebuilt the features on the RTX 4070 SUPER. All 55,768 cached visual, motion and label ticks matched across 56 recordings. The full 20-fit sweep reproduced the loss histories, validation decisions and four serialized primary heads. The original full-stream evaluation and the frozen two-stage evaluation reproduced their numerical results. The two-stage model-selection replay and validation-only rejection replay passed. All ten research figures regenerated with identical pixels. Timing and peak allocations can vary between runs.
 
-I checked relative documentation links and image files, rendered the 54 expressions in the math notes locally, and ran actionlint on the CPU workflow. I ran the CPU tests and marker browser check locally. Hosted Linux Actions has yet to run. Ruff passed its Pyflakes and basic pycodestyle checks (E4, E7, E9 and F). Its wider default rule set still reports existing style and loop-variable diagnostics.
+I checked relative documentation links and image files, rendered the 54 expressions in the math notes locally, and ran actionlint on the CPU workflow. I ran the CPU tests and marker browser check locally. Ruff passed its Pyflakes and basic pycodestyle checks (E4, E7, E9 and F). Its wider default rule set still reports existing style and loop-variable diagnostics.
+
+## Research commit references
+
+Before publication I replaced the private email in the Git metadata. Each rewritten research commit retains the same tree, message and timestamps. The original short IDs identify entries in the private run records. The links open the corresponding public commits.
+
+| Research record | Original ID | Public commit |
+|---|---|---|
+| Marker protocol | `e10066c` | [73bda45](https://github.com/sslcat/TemporalLens/commit/73bda45facc521f86d5459413f2a2abf931bc3da) |
+| Marker release | `65973db` | [afcc321](https://github.com/sslcat/TemporalLens/commit/afcc32130e47d3e1dad1f348cb0420543c74d10d) |
+| Real-video feasibility | `b25ac31` | [5c8a707](https://github.com/sslcat/TemporalLens/commit/5c8a7070579c83e02ad292c1f0d90bae373da703) |
+| IPN protocol and split | `5237f80` | [adb9f1d](https://github.com/sslcat/TemporalLens/commit/adb9f1d006d6d88066338941ff736c44f36ce4a6) |
+| IPN results | `861b02a` | [37ebe94](https://github.com/sslcat/TemporalLens/commit/37ebe945ffed0a4020122f1613b5341c15afa886) |
+| Two-stage selection lock | `4193974` | [a348b96](https://github.com/sslcat/TemporalLens/commit/a348b9655581cb53b895b309fa80a249911d8f4e) |
+| Two-stage results | `ef3c734` | [e91a55f](https://github.com/sslcat/TemporalLens/commit/e91a55fa1a930522a873410da2255805d588a75f) |
+| Rejection protocol | `4601079` | [2a27472](https://github.com/sslcat/TemporalLens/commit/2a27472fdabbc6688b0106c7a23a98e6b3f4d053) |
+| Validation diagnostics | `0330854` | [bd6137e](https://github.com/sslcat/TemporalLens/commit/bd6137e502a71e3184b89187a3b0007995653b4b) |
+| Audited release | `ffe4b45` | [47bc01c](https://github.com/sslcat/TemporalLens/commit/47bc01cf39511a6ee4129f1d32f50385c25186e6) |
