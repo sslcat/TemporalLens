@@ -32,6 +32,7 @@ The clean accuracy hid a useful failure. When I exchanged the two halves by maki
 
 ## Research and implementation
 
+- [Real-video feasibility study and proposed pilot](docs/real-video-feasibility.md)
 - [Hypotheses fixed before training](docs/protocol.md)
 - [Dataset card, licensing review and split provenance](docs/dataset-card.md)
 - [Model card and supported inputs](docs/model-card.md)
