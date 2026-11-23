@@ -1,0 +1,9 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "fit_seconds": 8.648749600019073,
+  "development_seconds": 12.374837900017155,
+  "development_peak_mib": 454.92236328125,
+  "binary_detector_parameters": 289,
+  "hybrid_detector_parameters": 299,
+  "fusion_parameters": 84
+}

@@ -1,0 +1,38 @@
+{
+  "proposal": {
+    "detector": "hybrid",
+    "threshold": 0.4,
+    "gap": 3,
+    "minimum": 6
+  },
+  "energy_control": {
+    "detector": "energy",
+    "threshold": 0.7537136673927307,
+    "gap": 1,
+    "minimum": 6
+  },
+  "binary_control": {
+    "detector": "binary",
+    "threshold": 0.25,
+    "gap": 1,
+    "minimum": 6
+  },
+  "hybrid_control": {
+    "detector": "hybrid",
+    "threshold": 0.4,
+    "gap": 3,
+    "minimum": 6
+  },
+  "primary": "temporal",
+  "cutoffs": {
+    "temporal": 0.6,
+    "flow": 0.6,
+    "fusion": 0.6
+  },
+  "sha256": {
+    "cnn": "7b01c5896e00e4aab5195ace727099dd846df9b9ac4a8b01ae4fd26d760063b7",
+    "flow": "07ada9091b3931d3261711e8668510b3a08f5b28d2cdad3cc34abb5f59bdf288",
+    "manifest": "bd02caaa7f04af9cc54ac6530e48cd692d3c0db2a9c8d4def3f1db6b511927d8",
+    "heads": "84420615b74f9b152fc09cabadfee68a5dbfde3294b1bde9c960d3c79893b865"
+  }
+}
