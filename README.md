@@ -1,66 +1,67 @@
 # TemporalLens
 
-I built TemporalLens to test a question that a video caption alone cannot answer. If a single frame shows a marker halfway across a screen, can a model tell which way it is travelling, when it started, and which movement happened next?
+I built TemporalLens around a question I could test with a dot on a screen. A still image tells me where the dot is. Could a model use a short sequence to tell me which way it moved, when it stopped, and which movement came next?
 
-TemporalLens is a local FastAPI application for the synthetic marker experiment and two real-video gesture studies. Its synthetic mode follows a cyan marker moving left, right, up or down. Its experimental real-video mode detects four touchless hand gestures. The UI previews a short video, runs the released temporal checkpoint and places each detected event on a seekable timeline. The bundled eight-second example comes from the held-out set.
+The project includes the experiments and a local app for inspecting their predictions. The marker experiment worked well enough that I tried the same question on four filmed hand gestures. On a whole recording, the gesture model often missed a motion I could see or labeled an unrelated one. In the app I can click a prediction to replay the evidence, or inspect a clip where the timeline is empty.
 
-![The live local workspace with measured event boundaries](artifacts/workspace.png)
+![Desktop app playing the bundled marker example, with predicted left and right movements on the seekable timeline](docs/images/marker-workspace.png)
 
-## Run locally
+## Try it locally
 
-The release includes trained weights. In the prepared Windows checkout, run the following from PowerShell.
+From the repository root, create a Python 3.13 environment with `python -m venv .venv`. Activate it with `.\.venv\Scripts\Activate.ps1` in PowerShell or `source .venv/bin/activate` on Linux. For a CPU installation on either platform, run the following commands.
 
-```powershell
-cd D:\TemporalLens
-.\.venv\Scripts\python.exe -m uvicorn temporallens.api:app --host 127.0.0.1 --port 18731
+```shell
+python -m pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+python -m uvicorn temporallens.api:app --host 127.0.0.1 --port 18731
 ```
 
-Open [TemporalLens on localhost](http://127.0.0.1:18731). Select an entry in the event list or timeline to seek. Upload limits are 24 MiB, 5–15 seconds and up to 1080p worth of pixels. The model uses CUDA when available. Set `TEMPORALLENS_DEVICE=cpu` to run on CPU. For a fresh checkout, follow [environment setup and reproduction](docs/reproduction.md).
+Open the workspace and play the bundled eight-second example. Click a timeline block or event row to seek. You can also upload a local MP4 or WebM lasting 5–15 seconds, up to 24 MiB. Scores are uncalibrated. [Open the local app](http://127.0.0.1:18731)
 
-## Real-video pilot
+To enable both **IPN pilot** and **two-stage pilot** modes, stop the server, run the two commands below, then restart it. Setup downloads and verifies the frozen encoder once. Inference runs locally. [CUDA setup and research reproduction](docs/reproduction.md)
 
-I trained a frozen-feature gesture system on original IPN Hand recordings and tested it on eight held-out participants. Known-boundary macro F1 was .511 for the independent-frame head, .344 for the pooled head, .404 for the temporal CNN and .534 for classical flow. Locating gestures in continuous footage was much harder. The CNN matched 2 of 64 events at IoU .50, produced 93 unmatched detections and recovered 0/16 complete lists. Shuffling isolated gestures reduced its accuracy from 43.8% to 40.6%. These results fell short of the temporal advantage I had set out to measure.
+```shell
+python -m pip install -r requirements-gesture.txt opencv-python-headless==4.12.0.88
+python -m research.ipn_setup
+```
 
-Select **Real hand gestures · IPN pilot** for throw left, throw right, zoom in and zoom out. It displays uncalibrated scores and can return an empty timeline. A fresh checkout needs the optional local encoder. [Setup](docs/reproduction.md) · [Curves, confusion matrices and failure cases](docs/ipn-results.md) · [IPN Hand attribution](artifacts/ipn/NOTICE.md)
+## From a moving marker to a moving hand
 
-## Two-stage gesture experiment
+I generated 396 marker clips with known boundaries. On 96 held-out scenes, the independent-frame model recovered **4/96** complete ordered event lists. The five-frame model recovered **96/96**, and an untrained velocity rule recovered **83/96**. When I cut and swapped the two movements, the temporal model often read the jump at the edit as another movement. Its exact-list score fell to **25/96**. Rerendering the same order along a continuous path restored **96/96**. [Marker results, interventions and failure examples](docs/evaluation.md)
 
-I separated finding a candidate interval from choosing its gesture label. A detector using optical flow and frozen visual scores localized 24/64 held-out gestures at IoU .50 before classification. The validation-selected CNN pipeline correctly labeled and localized 2/64, the same count as the original decoder. False alarms fell from 93 to 62. The paired interval for the F1 change included zero. The fusion comparison reached 9/64 on test and ranked lower on validation.
+I chose IPN Hand because its continuous recordings include the time between prompted gestures. Each of the 56 recordings I selected contains a throw left, throw right, zoom in and zoom out. I kept both recordings from each participant together, with 16 people for training, four for validation and eight for testing. I checked backgrounds and duplicate frames. The dataset does not identify physical rooms reliably. [Dataset card and split provenance](docs/dataset-card.md)
 
-Select **Real hand gestures · two-stage pilot** to see the proposed intervals, accepted labels and timestamps on a local upload. The original marker and gesture modes remain available. [Failure analysis, measurements and reproduction](docs/two-stage.md) · [Locked selection protocol](docs/two-stage-protocol.md)
+| IPN Hand model | Macro F1 given true boundaries | Correctly labeled and localized / 64 | False alarms | Stream segment F1 |
+|---|---:|---:|---:|---:|
+| Independent-frame MLP | .511 | 0 | 19 | .000 |
+| Pooled visual features | .344 | 1 | 18 | .024 |
+| Optical-flow classifier | .534 | 0 | 0 | .000 |
+| Temporal CNN | .404 | 2 | 93 | .025 |
+| Two-stage, validation-selected CNN | .404 | 2 | 62 | .031 |
+| Two-stage, fusion comparison | .457 | 9 | 92 | .109 |
 
-I also tested rejection rules on the fixed training and validation candidates. The margin rule removed two false acceptances, and none of the alternatives recovered more correct gestures across multiple validation participants. [Validation-only classifier diagnostic](docs/candidate-rejection.md)
+For known-boundary macro F1, I supplied the gesture interval and asked for one of four labels. The stream columns score all 16 complete test recordings. A match needs the correct class and temporal intersection over union of at least .50. Every model recovered **0/16** complete event lists. The flow classifier abstained on every stream. [Recognition, detection and participant-level uncertainty](docs/ipn-results.md) · [Two-stage comparison](docs/two-stage.md)
 
-## Synthetic marker experiment
+I had set a target of a .05 gain over the appearance controls on both recognition and stream F1, plus a ten-percentage-point loss under shuffling. The CNN missed those targets. Shuffling the frames of isolated gestures reduced its accuracy by only 3.1 points. Giving the models two known clips and two possible labels made ordering much easier, even for the frame baseline. [Prespecified comparisons](docs/ipn-protocol.md)
 
-| 96 held-out clips, 192 movement events | Independent frame | Temporal CNN |
-|---|---:|---:|
-| Event accuracy with known boundaries | 27.1% | 100% |
-| Macro F1 with known boundaries | 0.230 | 1.000 |
-| Complete ordered list with predicted boundaries | 4/96 | 96/96 |
-| Mean same-class temporal IoU | 0.092 | 0.997 |
+## Where the two-stage detector helped
 
-The two models use the same per-frame position measurements. With a five-frame neighborhood, the model learned to distinguish opposite directions. Reversing the sequence flipped every oracle-window direction prediction. Shuffling frames reduced its accuracy to 27.1%.
+Before assigning labels, the new detector localized **24/64** gestures at IoU .50. The original decoder located **3/64** with its labels ignored. Of the 24 matched proposals, the selected CNN rejected 20, mislabeled two and accepted two correctly. The paired 95% interval for its change in stream F1 was **−.012 to +.050**. Fusion did better on the old test recordings but ranked lower on validation. I kept the validation selection. [Candidate counts and failure analysis](docs/two-stage.md)
 
-The clean accuracy hid a useful failure. When I exchanged the two halves by making an edit, the temporal model often treated the jump at the join as a third movement. It recovered only 25/96 complete lists. Rerendering the exchanged directions along a continuous path restored 96/96. A simple untrained velocity rule already solved direction classification and recovered 83/96 clean lists. What the experiment taught me was to score every extra detection, inspect edit boundaries and include a nonlearned motion control. [Measurements, figures and failure analysis](docs/evaluation.md)
+![Mobile two-stage app showing two candidate intervals, one accepted throw left and its timeline](docs/images/gesture-candidates.png)
 
-## Research and implementation
+*I used a validation clip with a detectable gesture to check the interface. The model labeled 3.60–6.53 s as throw left. The annotated interval was 4.07–5.97 s. The screenshot shows the app’s results panels. The source footage stays local.*
 
-- [Real-video feasibility study and proposed pilot](docs/real-video-feasibility.md)
-- [Hypotheses fixed before training](docs/protocol.md)
-- [Dataset card, licensing review and split provenance](docs/dataset-card.md)
-- [Model card and supported inputs](docs/model-card.md)
-- [Application architecture](docs/architecture.md)
-- [Training procedure](docs/training.md) and [mathematical details](docs/math.md)
-- [Reproduction, tests and local browser check](docs/reproduction.md)
-- [Experiment records and checkpoints](artifacts/)
+I then fixed the candidates and examined rejection on training and validation participants. Only eight validation proposals matched a gesture at IoU .50. A margin rule reduced false acceptances from four to two and recovered the same two correct labels. Temperature scaling worsened calibration on matched gestures. A small head trained with verified background intervals rejected everything at its selected cutoff. I stopped there. [Validation-only diagnostic](docs/candidate-rejection.md)
 
-The two synthetic fits took 5.55 seconds on the local RTX 4070 SUPER and the larger fit peaked below 10 MiB of allocated tensors. The 20 real-video pilot fits took 31.95 seconds and peaked at 847.73 MiB. Cloud setup and transfer offer no demonstrated benefit at this scale. Runpod spend for this project was $0.
+Next I would test whether the change in hand appearance from the beginning to the end of a proposal can distinguish opposite motions when its boundaries are imperfect. I would first measure that on development participants, then freeze the design and collect an independent evaluation with documented rooms. The eight previously held-out people have already appeared in both real-video evaluations. They can serve as a regression benchmark. A future claim about generalization needs fresh participants.
 
-## License and assistance
+## Code, data and credit
 
-I release the original code, synthetic data, marker checkpoints and marker figures under the [MIT license](LICENSE). The real-video heads and derived pilot artifacts carry [separate attribution and terms](artifacts/ipn/NOTICE.md). External libraries have their own terms. I used OpenAI Codex to help design, implement, run, test and document the work. The curves, confusion matrices and examples were generated from the local run. [Attribution notices](NOTICE.md)
+The repository includes experiment protocols, weights, numeric predictions and figures. The real-video modes cover four prompted gestures and can miss all gestures in a clip or label unrelated movement. [Model card](docs/model-card.md) · [Architecture](docs/architecture.md) · [Equations](docs/math.md) · [Reproduction](docs/reproduction.md)
+
+I release the original code and synthetic assets under MIT. The IPN-derived heads, measurements and figures have separate CC BY 4.0 attribution. The optional DINOv2 encoder is Apache-2.0. I used OpenAI Codex to help design, implement, run, test and document the experiments. The screenshots come from the running application. [License](LICENSE) · [Attribution and upstream rights](NOTICE.md)
 
 ## Let's Connect
 
-[GitHub · sslcat](https://github.com/sslcat)
+[Find me on GitHub · sslcat](https://github.com/sslcat)

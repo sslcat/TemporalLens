@@ -1,11 +1,14 @@
 """Live Edge/Chromium verification with a private, validation-derived video."""
 
 import os
+import sys
 from pathlib import Path
+
 from playwright.sync_api import expect, sync_playwright
 
 root = Path(__file__).resolve().parents[1]
 ui = root / "work/two-stage/ui"
+base = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:18731"
 with sync_playwright() as p:
     browser = p.chromium.launch(
         executable_path=os.environ.get("TL_BROWSER"), headless=True
@@ -13,8 +16,8 @@ with sync_playwright() as p:
     for width, height in ((1280, 850), (390, 844)):
         page = browser.new_page(viewport={"width": width, "height": height})
         errors = []
-        page.on("pageerror", lambda e: errors.append(str(e)))
-        page.goto("http://127.0.0.1:18731")
+        page.on("pageerror", lambda error, seen=errors: seen.append(str(error)))
+        page.goto(base)
         expect(page.locator(".row")).to_have_count(2)
         page.select_option("#mode", "two-stage")
         expect(page.locator("#scope")).to_contain_text("false alarms")

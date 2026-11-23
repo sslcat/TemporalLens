@@ -40,7 +40,14 @@ def dump(path, data):
 
 
 def hashes(files):
-    return {k: hashlib.sha256(p.read_bytes()).hexdigest() for k, p in files.items()}
+    digests = {}
+    for key, path in files.items():
+        data = path.read_bytes()
+        if key == "manifest":
+            # The published lock hashes the original Windows checkout of split.json.
+            data = data.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        digests[key] = hashlib.sha256(data).hexdigest()
+    return digests
 
 
 def prepare(split):

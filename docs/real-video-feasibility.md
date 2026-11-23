@@ -1,5 +1,7 @@
 # Can TemporalLens recognize events in real video?
 
+I wrote this design before training. The completed [gesture pilot](ipn-results.md) and [two-stage follow-up](two-stage.md) report what happened.
+
 **Decision, 2026-11-23.** I recommend a bounded local pilot on **IPN Hand**, using the original resized RGB frames and their matching original temporal annotations. The four events are **throw left, throw right, zoom in and zoom out**. Here “throw” means a hand command to a touchless interface. Success would establish gesture recognition on filmed people. Object manipulation and open-world recognition require other evidence. I have verified input access and a frozen encoder forward pass. Real-video accuracy, boundary quality and generalization are still open questions. [Source, licenses and access audit](real-video-access.md)
 
 ## Why these four events

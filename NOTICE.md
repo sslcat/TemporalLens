@@ -7,3 +7,5 @@ PyTorch supplies tensor operations and CUDA kernels. PyAV and its FFmpeg librari
 I reviewed EPIC-KITCHENS-100 and Jester during dataset selection. Neither contributes footage, annotations or weights to this release. The dataset card links to the publishers’ terms.
 
 I used OpenAI Codex for assistance with the research design, implementation, local experiment execution, tests and documentation. The numeric results come from the saved local runs.
+
+The desktop screenshot shows the TemporalLens UI and the generated marker example, released under MIT. For the mobile screenshot I cropped the live results panels after analyzing an IPN Hand validation clip. The displayed intervals and labels are my derived predictions. I release that screenshot under CC BY 4.0 with the same IPN Hand attribution. The public images contain no participant frames. [Original pilot notice](artifacts/ipn/NOTICE.md) · [Two-stage artifacts](artifacts/two-stage/NOTICE.md) · [Validation diagnostic artifacts](artifacts/rejection/NOTICE.md)

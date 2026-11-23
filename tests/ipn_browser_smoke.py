@@ -16,7 +16,7 @@ with sync_playwright() as pw:
     for width, height in ((1280, 850), (390, 844)):
         page = browser.new_page(viewport={"width": width, "height": height})
         errors = []
-        page.on("pageerror", lambda e: errors.append(str(e)))
+        page.on("pageerror", lambda error, seen=errors: seen.append(str(error)))
         page.goto(base)
         expect(page.locator(".row")).to_have_count(2)
         page.select_option("#mode", "gesture")

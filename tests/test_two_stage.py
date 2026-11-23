@@ -1,9 +1,14 @@
+import hashlib
+import json
+
 import numpy as np
 import torch
 from fastapi.testclient import TestClient
+
 from research.stage_metrics import aggregate, stream_stats
+from research.stage_study import BASE, OUT, hashes
 from temporallens import api
-from temporallens.two_stage import intervals, labeled_intervals, fusion_input
+from temporallens.two_stage import fusion_input, intervals, labeled_intervals
 
 
 def test_proposals_merge_short_gaps_then_filter_short_spans():
@@ -46,3 +51,19 @@ def test_unavailable_two_stage_http_status(monkeypatch):
     with TestClient(api.app) as client:
         assert client.get("/api/status").json()["two_stage_ready"] is False
         assert client.post("/api/analyze?mode=two-stage").status_code == 503
+
+
+def test_manifest_lock_survives_checkout_line_endings(tmp_path):
+    manifest = tmp_path / "split.json"
+    checkpoint = tmp_path / "head.pt"
+    lf = (BASE / "split.json").read_bytes().replace(b"\r\n", b"\n")
+    expected = json.loads((OUT / "selection.json").read_text())["sha256"]["manifest"]
+    for content in (lf, lf.replace(b"\n", b"\r\n")):
+        manifest.write_bytes(content)
+        checkpoint.write_bytes(content)
+        assert hashes({"manifest": manifest, "heads": checkpoint}) == {
+            "manifest": expected,
+            "heads": hashlib.sha256(content).hexdigest(),
+        }
+    manifest.write_bytes(lf.replace(b'"train"', b'"val"', 1))
+    assert hashes({"manifest": manifest})["manifest"] != expected
