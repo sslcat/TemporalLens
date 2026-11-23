@@ -42,7 +42,13 @@ I bootstrap whole scene indices with replacement, recomputing the aggregate conf
 
 At tick $t$ I letterbox the RGB image to $224\times224$ and normalize channels using the frozen encoder's means and standard deviations. The $16\times16$ patch grid has 384 channels. I average each quadrant and concatenate to obtain $z_t\in\mathbb{R}^{1536}$. I standardize each component with training-only statistics and a .015 floor on its standard deviation. The frame MLP sees $z_t$. The pooled classifier sees $\frac1{15}\sum_{j=-7}^7 z_{t+j}$. Each window mean is invariant to permutations inside that window. Moving a frame between overlapping windows can change dense outputs.
 
-For temporal layer $\ell$ with dilation $d_\ell\in\{1,2,4\}$ I use $h^{\ell}_t=\mathrm{ReLU}(h^{\ell-1}_t+b_\ell+\sum_{j=-1}^1 W_{\ell j}h^{\ell-1}_{t+jd_\ell})$. The temporal receptive field is $1+2(1+2+4)=15$ ticks. I replicate input edges and supply context on both sides of training chunks. The five-way weighted cross-entropy uses $w_c=\sqrt{N/n_c}$ from train ticks and divides by the observed target-weight sum. The logistic flow baseline adds $\lambda\lVert W\rVert_F^2/2$ to that loss. [Heads](../temporallens/gesture.py) · [Fitting code](../research/ipn_train.py)
+I use this recurrence for temporal layer $\ell$ with dilation $`d_\ell\in\{1,2,4\}`$.
+
+```math
+h^{\ell}_t=\mathrm{ReLU}(h^{\ell-1}_t+b_\ell+\sum_{j=-1}^1 W_{\ell j}h^{\ell-1}_{t+jd_\ell})
+```
+
+The temporal receptive field is $1+2(1+2+4)=15$ ticks. I replicate input edges and supply context on both sides of training chunks. The five-way weighted cross-entropy uses $w_c=\sqrt{N/n_c}$ from train ticks and divides by the observed target-weight sum. The logistic flow baseline adds $\lambda\lVert W\rVert_F^2/2$ to that loss. [Heads](../temporallens/gesture.py) · [Fitting code](../research/ipn_train.py)
 
 For supplied true interval $I$, the recognition decision maximizes the average log probability over $I$ among four targets. For unknown boundaries I find runs of consecutive above-threshold ticks, include the other class in each argmax, and match predicted/reference intervals one-to-one at each IoU cutoff. Segment F1 is $2TP/(2TP+FP+FN)$. In the AB/BA test the forced assignment compares $s_A(a)+s_B(b)$ to $s_A(b)+s_B(a)$, where $s$ is a bout's mean logit and $a,b$ are the two named targets. A tie receives half credit. Reversing the twin order preserves all input frames. [Metric implementation](../research/ipn_metrics.py) · [Controls](../research/ipn_evaluate.py)
 
