@@ -56,14 +56,14 @@ I then fixed the candidates and examined rejection on training and validation pa
 
 Next I would test whether the change in hand appearance from the beginning to the end of a proposal can distinguish opposite motions when its boundaries are imperfect. I would first measure that on development participants, then freeze the design and collect an independent evaluation with documented rooms. The eight previously held-out people have already appeared in both real-video evaluations. They can serve as a regression benchmark. A future claim about generalization needs fresh participants.
 
-## Code, data and credit
+## Licensing
 
 The repository includes experiment protocols, weights, numeric predictions and figures. The real-video modes cover four prompted gestures and can miss all gestures in a clip or label unrelated movement. [Model card](docs/model-card.md) · [Architecture](docs/architecture.md) · [Equations](docs/math.md) · [Reproduction](docs/reproduction.md)
 
-I release the original code and synthetic assets under MIT. The IPN-derived heads, measurements and figures have separate CC BY 4.0 attribution. The optional DINOv2 encoder is Apache-2.0. I used OpenAI Codex to help design, implement, run, test and document the experiments. The screenshots come from the running application. [License](LICENSE) · [Attribution and upstream rights](NOTICE.md)
+I release the original code and synthetic assets under MIT. The IPN-derived heads, measurements and figures have separate CC BY 4.0 attribution. The optional DINOv2 encoder is Apache-2.0. The screenshots come from the running application. [License](LICENSE) · [Attribution and upstream rights](NOTICE.md)
 
 ## Let's Connect
 
-If you're an engineer or recruiter, I'd be glad to discuss the implementation, the mathematics behind the timeline, how I set up the experiments, and where the gesture models fell short.
+If you’re working on computer vision or sequence modeling, I’d love to compare notes on how you tell whether a temporal model has learned motion. I can explain how I built the experiments and timeline, the tools I used, and the math behind scoring overlapping intervals. I’m happy to talk through why I split detection from recognition, which findings held up, and what the gap between synthetic clips and real video taught me.
 
-[Find me on GitHub · sslcat](https://github.com/sslcat)
+Questions about the project are welcome. [Find me on GitHub](https://github.com/sslcat).
